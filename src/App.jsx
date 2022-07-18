@@ -1,10 +1,19 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.css';
+
+
+import NavBar from './components/NavBar/NavBar'
+import AppRoutes from './routes/AppRoutes';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hola</h1>
-    </div>
+
+    <>
+      <NavBar />
+      <AppRoutes />
+
+    </>
   )
 }
 
