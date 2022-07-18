@@ -14,6 +14,10 @@ class UserService {
         return this.api.get('/getAllAccounts')
     }
 
+    getOneUser(account_id) {
+        return this.api.get(`/getOneAccount/${account_id}`)
+    }
+
 }
 
 const userService = new UserService()

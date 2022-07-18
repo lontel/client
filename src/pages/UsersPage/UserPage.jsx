@@ -1,6 +1,8 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import userService from "../../services/user.services";
+import UserList from "../../components/Users/UserList/UserList";
+import { Spinner } from "react-bootstrap";
+import Loader from "../../components/Loader/Loader";
 
 const UserListPage = () => {
 
@@ -15,11 +17,11 @@ const UserListPage = () => {
     }, [])
 
     return (
-
-
-        users.map(({ username, role }) => <p> Este es : {username} con role {role}</p>)
-
-
+        users.length
+            ?
+            <UserList users={users} />
+            :
+            < Loader />
     )
 }
 

@@ -1,0 +1,6 @@
+.UserCard img {
+    height: 80%;
+    width: 15%;
+    border-radius: 350px;
+    object-fit: cover;
+}
