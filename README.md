@@ -5,7 +5,7 @@
 `/`         |Home Page|
 `/about-us` |About us page|
 `/contact`  | Contact page|
-`/account/sign up`|Render sign up page|
+`/account/sign-up`|Render sign up page|
 `/account/login`|Render login page|
 `/account/logout`|Logout|
 `/account/my-profile/:id`|Get to my account|
