@@ -5,12 +5,12 @@ class UserService {
     constructor() {
 
         this.api = axios.create({
-            baseURL: `${process.env.REACT_APP_API_URL}/users`
+            baseURL: `${process.env.REACT_APP_API_URL}/account`
         })
     }
 
 
-    getCoasters() {
+    getUsers() {
         return this.api.get('/getAllAccounts')
     }
 
