@@ -7,26 +7,25 @@ const EventDetails = () => {
 
     const [event, setEvent] = useState({})
 
-
-    const { event_id } = useParams()
-    console.log(event)
+    const { id } = useParams()
+    console.log(id)
 
     useEffect(() => {
 
         eventService
-            .getOneEvent(event_id)
-            .then(({ data }) => setEvent(data))
+            .getOneEvent(id)
+            .then(({ data }) => {
+                setEvent(data)
+                console.log('--------------', data)
+            })
             .catch(err => console.error(err))
+
     }, [])
 
     return (
 
         <Container>
             {
-                // !user                 esto será el spinner
-                //     ?
-                //     <Loader />
-                //     :
                 <>
                     <h1>Details of  {event.origin} to {event.destination}  </h1>
                     <hr />
@@ -45,9 +44,6 @@ const EventDetails = () => {
                                 <Button as="div" variant="dark">Back to event list</Button>
                             </Link>
                         </Col>
-
-
-
                     </Row>
                 </>
             }
