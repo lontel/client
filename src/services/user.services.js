@@ -18,8 +18,15 @@ class UserService {
         return this.api.get(`/getOneAccount/${account_id}`)
     }
 
+    editUser(account_id) {
+        return this.api.put(`/edit/${account_id}`)
+    }  
+
+    // deleteUser(account_id) {
+    //     return this.api.delete(`/delete/${account_id}`)
+    // }
 }
 
-const userService = new UserService()
 
+const userService = new UserService()
 export default userService
