@@ -31,7 +31,7 @@ const SignupForm = () => {
             .signup(signupData)
             .then(({ data }) => {
                 // setShowMessage({
-                    // show: true, title: `Welcome@, ${data.user.username}`, text: 'You have successfully registered'
+                //     show: true, title: `Welcome@, ${data.user.username}`, text: 'You have successfully registered'
                 // })
                 navigate('/account/sign-up')
             })
@@ -53,7 +53,7 @@ const SignupForm = () => {
 
             <Form.Group className="mb-3" controlId="bio">
                 <Form.Label>Description</Form.Label>
-                <Form.Control type="textarea" value={bio} onChange={handleInputChange} name="bio" />
+                <Form.Control as="textarea" type="text" value={bio} onChange={handleInputChange} name="bio" />
             </Form.Group>
 
 
