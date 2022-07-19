@@ -14,6 +14,10 @@ class EventService {
         return this.api.get('/getAllEvents')
     }
 
+    getOneEvent(event_id) {
+        return this.api.get(`/getOneEvent/${event_id}`)
+    }
+
     saveEvent(eventData) {
         return this.api.post('/saveEvent', eventData)
     }
