@@ -6,6 +6,7 @@ import HomePage from '../pages/HomePage/HomePage'
 import EventListPage from '../pages/EventsPages/EventsPage/EventsPage'
 import NewEventPage from '../pages/EventsPages/NewEventPage/NewEventPage'
 import EventDetails from '../pages/EventsPages/EventsDetails/EventsDetails'
+import UserEdit from '../pages/UsersPages/UserEdit/UserEdit'
 
 
 const AppRoutes = () => {
@@ -20,6 +21,8 @@ const AppRoutes = () => {
             <Route path='/events/create' element={<NewEventPage />} />
             <Route path='/events/details/:id' element={<EventDetails />} />
             <Route path='/account/sign-up' element={<SignupPage />} />
+            <Route path='/account/edit/:id' element={<UserEdit/>} />
+
 
         </Routes>
     )

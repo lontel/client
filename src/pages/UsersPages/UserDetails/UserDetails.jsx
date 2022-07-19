@@ -42,10 +42,10 @@ const UserDetails = () => {
                             <Link to="/">
                                 <Button as="div" variant="dark">Back to user list</Button>
                             </Link>
-                            <Link to="/">
+                            <Link to={`/account/edit/${account_id}`}>
                                 <Button as="div" variant="warning">Edit</Button>
                             </Link>
-                            <Link to="/">
+                            <Link to={`/account/delete/${account_id}`}>
                                 <Button as="div" variant="danger">Delete</Button>
                             </Link>
                         </Col>
