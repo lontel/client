@@ -42,6 +42,12 @@ const UserDetails = () => {
                             <Link to="/">
                                 <Button as="div" variant="dark">Back to user list</Button>
                             </Link>
+                            <Link to="/">
+                                <Button as="div" variant="warning">Edit</Button>
+                            </Link>
+                            <Link to="/">
+                                <Button as="div" variant="danger">Delete</Button>
+                            </Link>
                         </Col>
 
                         <Col md={{ span: 4 }}>
