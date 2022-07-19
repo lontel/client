@@ -1,4 +1,4 @@
-import userService from "../../services/user.services"
+import userService from "../../../services/user.services"
 import { useEffect, useState } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 import { Link, useParams } from "react-router-dom"

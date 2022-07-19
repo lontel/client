@@ -1,7 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
 import SignupPage from '../pages/SignupPage/SignupPage'
-import UserListPage from '../pages/UsersPage/UserPage'
-import UserDetails from '../pages/UserDetails/UserDetails'
+import UserListPage from '../pages/UsersPages/UsersPage/UserPage'
+import UserDetails from '../pages/UsersPages/UserDetails/UserDetails'
+import HomePage from '../pages/HomePage/HomePage'
+import EventListPage from '../pages/EventsPages/EventsPage/EventsPage'
+import NewEventPage from '../pages/EventsPages/NewEventPage/NewEventPage'
 
 
 const AppRoutes = () => {
@@ -9,10 +12,11 @@ const AppRoutes = () => {
     return (
 
         <Routes>
-            <Route path='/' element={<UserListPage />} />
-            <Route path='/events' element={<h1>Soy los eventos</h1>} />
-            <Route path='/events/create' element={<h1>Crea tus eventos</h1>} />
-            <Route path='/events/details/:account_id' element={<UserDetails />} />
+            <Route path='/' element={<HomePage />} />
+            <Route path='/users' element={<UserListPage />} />
+            <Route path='/account/details/:account_id' element={<UserDetails />} />
+            <Route path='/events' element={<EventListPage />} />
+            <Route path='/events/create' element={<NewEventPage />} />
             <Route path='/events/details/:id' element={<h1>Detalle del evento</h1>} />
             <Route path='/account/sign-up' element={<SignupPage />} />
 

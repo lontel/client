@@ -11,7 +11,7 @@ const UserCard = ({ username, role, profilePic, _id }) => {
             <Card.Body>
                 <Card.Title>{username}</Card.Title>
                 <p>My role is {role} </p>
-                <Link to={`/events/details/${_id}`}>
+                <Link to={`/account/details/${_id}`}>
                     <div className="d-grid">
                         <Button variant="dark" size="sm" as="div">Ver detalles</Button>
                     </div>

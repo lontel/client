@@ -9,7 +9,7 @@ const UserList = ({ users }) => {
             {
                 users.map(user => {
                     return (
-                        <Col md={3}  >
+                        <Col md={3} key={user._id} >
                             <UserCard {...user} />
                         </Col>
                     )

@@ -8,15 +8,20 @@ const NavBar = () => {
     return (
         <Navbar bg="dark" expand="md" variant="dark" className='mb-5'>
             <Container>
-                <Navbar.Brand>Bike Connect!</Navbar.Brand>
+                <Link to="/">
+                    <Navbar.Brand>Bike Connect!</Navbar.Brand>
+                </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <Link to="/">
-                            <Nav.Link as="span">Home</Nav.Link>
+                        <Link to="/account/sign-up">
+                            <Nav.Link as="span">Sign-Up</Nav.Link>
                         </Link>
                         <Link to="/events">
                             <Nav.Link as="span">Events</Nav.Link>
+                        </Link>
+                        <Link to="/users">
+                            <Nav.Link as="span">Users</Nav.Link>
                         </Link>
                         <Link to="/events/create">
                             <Nav.Link as="span">Create Event</Nav.Link>
