@@ -10,9 +10,7 @@ const EventDelete = () => {
 
     eventService
         .deleteEvent(id)
-        .then(() => {
-            navigate('/')
-        })
+        .then(() => navigate('/events'))
         .catch(err => console.error(err))
 
 }
