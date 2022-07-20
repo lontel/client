@@ -1,17 +1,16 @@
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css'
 
-
-import NavBar from './components/NavBar/NavBar'
-import AppRoutes from './routes/AppRoutes';
-import UserMessage from './components/UserMessage/UserMessage';
+import Navbar from './components/Navbar/Navbar'
+import AppRoutes from './routes/AppRoutes'
+import UserMessage from './components/UserMessage/UserMessage'
 
 
 function App() {
   return (
 
     <>
-      <NavBar />
+      <Navbar />
       <AppRoutes />
       <UserMessage />
     </>
