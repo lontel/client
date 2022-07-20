@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import { Form, Button } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom'
 import authService from './../../services/auth.services'
+import uploadServices from "../../services/upload.services"
 
 import { MessageContext } from './../../contexts/userMessage.context'
 
@@ -16,6 +17,8 @@ const SignupForm = () => {
         role: 'CYCLIST'
     })
 
+    const [isLoading, setIsLoading] = useState(false)
+    
     const { setShowMessage } = useContext(MessageContext)
     const navigate = useNavigate()
 
@@ -38,6 +41,22 @@ const SignupForm = () => {
             .catch(err => console.log(err))
     }
 
+    const handleFileInput = e => {
+
+        setIsLoading(true)
+
+        const formData = new FormData()
+        formData.append('imageData', e.target.files[0])
+
+        uploadServices
+            .uploadimage(formData)
+            .then(({ data }) => {
+                setIsLoading(false)
+                setSignupData({ ...signupData, profilePic: data.cloudinary_url })
+            })
+            .catch(err => console.error(err))
+    }
+
 
     const { username, bio, profilePic, password, email, role } = signupData
 
@@ -57,9 +76,14 @@ const SignupForm = () => {
             </Form.Group>
 
 
-            <Form.Group className="mb-3" controlId="profilePic">
+            {/* <Form.Group className="mb-3" controlId="profilePic">
                 <Form.Label>Avatar</Form.Label>
                 <Form.Control type="file" value={profilePic} onChange={handleInputChange} name="profilePic" />
+            </Form.Group> */}
+
+            <Form.Group className="mb-3" controlId="imageUrl">
+                <Form.Label>Avatar</Form.Label>
+                <Form.Control type="file" onChange={handleFileInput} name="profilePic" />
             </Form.Group>
 
 
