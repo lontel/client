@@ -31,6 +31,7 @@ class EventService {
     }
 
     saveEvent(eventData) {
+        console.log('------------------------', eventData)
         return this.api.post('/saveEvent', eventData)
     }
 
