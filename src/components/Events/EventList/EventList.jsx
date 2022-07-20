@@ -1,6 +1,6 @@
 import { Row, Col } from 'react-bootstrap'
 import EventCard from '../EventCard/EventCard'
-import { Container, Modal } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import { useState } from 'react'
 import EventForm from '../EventForm/EventForm'
 

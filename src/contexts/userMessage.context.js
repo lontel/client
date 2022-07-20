@@ -7,7 +7,7 @@ function MessageProviderWrapper(props) {
     const [showMessage, setShowMessage] = useState({
         show: false,
         title: 'Message',
-        text: 'Text of message'
+        text: 'Text of menssage'
     })
 
     return (

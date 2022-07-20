@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom'
 import authService from './../../services/auth.services'
 
-// import { MessageContext } from './../../contexts/userMessage.context'
+import { MessageContext } from './../../contexts/userMessage.context'
 
 const SignupForm = () => {
 
@@ -16,7 +16,7 @@ const SignupForm = () => {
         role: 'CYCLIST'
     })
 
-    // const { setShowMessage } = useContext(MessageContext)
+    const { setShowMessage } = useContext(MessageContext)
     const navigate = useNavigate()
 
     const handleInputChange = e => {
@@ -30,10 +30,10 @@ const SignupForm = () => {
         authService
             .signup(signupData)
             .then(({ data }) => {
-                // setShowMessage({
-                //     show: true, title: `Welcome@, ${data.user.username}`, text: 'You have successfully registered'
-                // })
-                navigate('/account/sign-up')
+                setShowMessage({
+                    show: true, title: `Welcome@, ${data.user.username}`, text: 'You have successfully registered'
+                })
+                navigate('/account/login')
             })
             .catch(err => console.log(err))
     }
