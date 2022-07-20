@@ -20,6 +20,9 @@ const NavBar = () => {
                         <Link to="/account/login">
                             <Nav.Link as="span">Login</Nav.Link>
                         </Link>
+                        <Link to="/account/logout">
+                            <Nav.Link as="span">Logout</Nav.Link>
+                        </Link>
                         <Link to="/events">
                             <Nav.Link as="span">Events</Nav.Link>
                         </Link>

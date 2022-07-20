@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import eventService from "../../../services/event.services"
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const EventForm = () => {
@@ -16,7 +16,7 @@ const EventForm = () => {
 
     })
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const handleChange = e => {
         const { value, name } = e.target
@@ -29,8 +29,10 @@ const EventForm = () => {
 
         eventService
             .saveEvent(eventData)
-            .then(() => console.log("hola"))
-            .catch(ERR => console.error(ERR))
+            .then(() => {
+                navigate('/events')
+            })
+            .catch(err => console.error(err))
     }
 
 
