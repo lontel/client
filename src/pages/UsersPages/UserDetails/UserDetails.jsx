@@ -5,9 +5,11 @@ import { Link, useParams } from "react-router-dom"
 
 const UserDetails = () => {
 
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState({})
 
     const { account_id } = useParams()
+
+    // console.log(user, '--------')
 
     useEffect(() => {
 
@@ -39,7 +41,7 @@ const UserDetails = () => {
                             </ul>
                             <hr />
 
-                            <Link to="/">
+                            <Link to="/users">
                                 <Button as="div" variant="dark">Back to user list</Button>
                             </Link>
                             <Link to={`/account/edit/${account_id}`}>

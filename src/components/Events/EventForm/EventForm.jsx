@@ -4,7 +4,7 @@ import eventService from "../../../services/event.services"
 import { useNavigate } from 'react-router-dom'
 
 
-const EventForm = ({ closeModal, refreshEvents }) => {
+const EventForm = ({ closeModal }) => {
 
     const [eventData, setEventData] = useState({
         origin: '',
@@ -12,8 +12,6 @@ const EventForm = ({ closeModal, refreshEvents }) => {
         description: '',
         numberOfCyclists: '',
         date: ''
-
-
     })
 
     const navigate = useNavigate()

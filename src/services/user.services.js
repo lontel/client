@@ -20,11 +20,11 @@ class UserService {
 
     editUser(account_id) {
         return this.api.put(`/edit/${account_id}`)
-    }  
+    }
 
-    // deleteUser(account_id) {
-    //     return this.api.delete(`/delete/${account_id}`)
-    // }
+    deleteUser(account_id) {
+        return this.api.delete(`/deleteAccount/${account_id}`)
+    }
 }
 
 

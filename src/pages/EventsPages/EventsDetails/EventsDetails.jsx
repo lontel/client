@@ -27,7 +27,7 @@ const EventDetails = () => {
         <Container>
             {
                 <>
-                    <h1>Details of  {event.origin} to {event.destination}  </h1>
+                    {/* <h1>Details of  {event.origin.address} to {event.destination.address}  </h1> */}
                     <hr />
 
                     <Row>
@@ -36,7 +36,9 @@ const EventDetails = () => {
                             <h3>Description of the route:</h3>
                             <p>{event.description}</p>
                             <ul>
-                                <li>My email: {event.email}</li>
+                                <li>Date: {event.date}</li>
+                                <li>Maximum of number of cyclists: {event.numberOfCyclists}</li>
+
                             </ul>
                             <hr />
 

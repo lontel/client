@@ -13,8 +13,13 @@ const UserCard = ({ username, role, profilePic, _id }) => {
                 <p>My role is {role} </p>
                 <Link to={`/account/details/${_id}`}>
                     <div className="d-grid">
-                        <Button variant="dark" size="sm" as="div">Ver detalles</Button>
+                        <Button variant="dark" size="sm" as="div">Show details</Button>
                     </div>
+                    <Link to={`/account/delete/${_id}`}>
+                        <div className="d-grid">
+                            <Button variant="danger" size="sm" as="div">Delete</Button>
+                        </div>
+                    </Link>
                 </Link>
             </Card.Body>
         </Card >

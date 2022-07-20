@@ -12,7 +12,12 @@ const EventCard = ({ origin, destination, description, _id }) => {
                 <p>Mi viaje es de  {origin.address} a {destination.address} </p>
                 <Link to={`/events/details/${_id}`}>
                     <div className="d-grid">
-                        <Button variant="dark" size="sm" as="div">Ver detalles</Button>
+                        <Button variant="dark" size="sm" as="div">Show details</Button>
+                    </div>
+                </Link>
+                <Link to={`/events/edit/${_id}`}>
+                    <div className="d-grid">
+                        <Button variant="warning" size="sm" as="div">Edit</Button>
                     </div>
                 </Link>
                 <Link to={`/events/delete/${_id}`}>

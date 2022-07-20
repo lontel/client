@@ -31,8 +31,11 @@ class EventService {
     }
 
     saveEvent(eventData) {
-        console.log('------------------------', eventData)
         return this.api.post('/saveEvent', eventData)
+    }
+
+    editEvent(event_id) {
+        return this.api.put(`/updateEvent/${event_id}`)
     }
 
     deleteEvent(event_id) {
