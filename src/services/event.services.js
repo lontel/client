@@ -35,6 +35,10 @@ class EventService {
         return this.api.post('/saveEvent', eventData)
     }
 
+    deleteEvent(event_id) {
+        return this.api.delete(`/deleteEvent/${event_id}`)
+    }
+
 
 }
 

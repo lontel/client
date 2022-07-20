@@ -8,6 +8,7 @@ import NewEventPage from '../pages/EventsPages/NewEventPage/NewEventPage'
 import EventDetails from '../pages/EventsPages/EventsDetails/EventsDetails'
 import UserEdit from '../pages/UsersPages/UserEdit/UserEdit'
 import LoginPage from '../pages/LoginPage/LoginPage'
+import EventDelete from '../components/Events/EventDelete/EventDelete'
 
 
 const AppRoutes = () => {
@@ -21,9 +22,10 @@ const AppRoutes = () => {
             <Route path='/events' element={<EventListPage />} />
             <Route path='/events/create' element={<NewEventPage />} />
             <Route path='/events/details/:id' element={<EventDetails />} />
+            <Route path='/events/delete/:id' element={<EventDelete />} />
             <Route path='/account/sign-up' element={<SignupPage />} />
             <Route path='/account/edit/:id' element={<UserEdit />} />
-            <Route path='/account/login' element={<LoginPage/>} />
+            <Route path='/account/login' element={<LoginPage />} />
 
 
         </Routes>

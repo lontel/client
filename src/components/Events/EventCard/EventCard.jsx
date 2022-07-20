@@ -15,10 +15,15 @@ const EventCard = ({ origin, destination, description, _id }) => {
                         <Button variant="dark" size="sm" as="div">Ver detalles</Button>
                     </div>
                 </Link>
+                <Link to={`/events/delete/${_id}`}>
+                    <div className="d-grid">
+                        <Button variant="danger" size="sm" as="div">Delete</Button>
+                    </div>
+                </Link>
 
             </Card.Body>
         </Card >
     )
 }
 
-export default EventCard
+export default EventCard   

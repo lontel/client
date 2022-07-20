@@ -15,3 +15,4 @@
 `/events/details/:id`|Event details|
 `events/create`|Render create event form|
 `/events/edit/:id`| Update event|
+`/events/delete/:id`| Delete event|

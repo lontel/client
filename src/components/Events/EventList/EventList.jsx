@@ -19,8 +19,8 @@ const EventList = ({ events }) => {
             {
                 events.map(event => {
                     return (
-                        <>
-                            <Col md={3} key={event._id} >
+                        <Col md={3} key={event._id}>
+                            <Col  >
                                 <EventCard {...event} />
                             </Col>
 
@@ -32,7 +32,8 @@ const EventList = ({ events }) => {
                                     <EventForm closeModal={closeModal} /* Ojo! refreshCoasters={loadCoasters} */ />
                                 </Modal.Body>
                             </Modal>
-                        </>
+                        </Col>
+
                     )
 
                 })

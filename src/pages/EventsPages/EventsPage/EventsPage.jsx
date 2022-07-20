@@ -7,7 +7,7 @@ import Loader from "../../../components/Loader/Loader";
 const EventListPage = () => {
 
     const [events, setEvents] = useState([])
-    const [showModal, setShowModal] = useState(false)
+    // const [showModal, setShowModal] = useState(false)
 
 
     useEffect(() => {

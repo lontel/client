@@ -1,10 +1,9 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import eventService from "../../../services/event.services"
-// import { useNavigate } from 'react-router-dom'
 
 
-const EventForm = () => {
+const EventForm = ({ closeModal, refreshEvents }) => {
 
     const [eventData, setEventData] = useState({
         origin: '',
@@ -15,8 +14,6 @@ const EventForm = () => {
 
 
     })
-
-    // const navigate = useNavigate()
 
     const handleChange = e => {
         const { value, name } = e.target
@@ -29,7 +26,7 @@ const EventForm = () => {
 
         eventService
             .saveEvent(eventData)
-            .then(() => console.log("hola"))
+            .then(() => refreshEvents())
             .catch(ERR => console.error(ERR))
     }
 
@@ -101,7 +98,7 @@ const EventForm = () => {
             </Form.Group>
 
             <div className="d-grid">
-                <Button variant="dark" type="submit">Create new event</Button>
+                <Button variant="dark" onClick={closeModal} type="submit">Create new event</Button>
             </div>
 
         </Form>
