@@ -18,7 +18,7 @@ const NavBar = () => {
 
         setShowMessage({ show: true, title: 'Good bye!', text: 'Your session has been succesfully closed' })
         logoutUser()
-            // .then(() => navigate('/events'))
+        // .then(() => navigate('/events'))
     }
 
     return (
@@ -30,7 +30,7 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        
+
 
                         {user ?
                             <>

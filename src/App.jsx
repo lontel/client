@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
-import Navbar from './components/Navbar/Navbar'
+import NavBar from './components/NavBar/Navbar'
 import AppRoutes from './routes/AppRoutes'
 import UserMessage from './components/UserMessage/UserMessage'
 
@@ -10,7 +10,7 @@ function App() {
   return (
 
     <>
-      <Navbar />
+      <NavBar />
       <AppRoutes />
       <UserMessage />
     </>
