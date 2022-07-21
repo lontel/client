@@ -3,21 +3,31 @@ import EventCard from '../EventCard/EventCard'
 import { Modal } from 'react-bootstrap'
 import { useState } from 'react'
 import EventForm from '../EventForm/EventForm'
+import { useEffect } from 'react'
 
 
 const EventList = ({ events, loadEvents }) => {
 
     const [showModal, setShowModal] = useState(false)
+    const [allEvents, setAllEvents] = useState(events)
+
 
     const openModal = () => setShowModal(true)
     const closeModal = () => setShowModal(false)
+
+    useEffect(() => {
+
+        setAllEvents(events)
+
+    }, [events])
+
 
     return (
         <Row>
             <h1>List of events <span onClick={openModal}>+</span> </h1>
             <hr></hr>
             {
-                events.map(event => {
+                allEvents.map(event => {
                     return (
                         <Col md={3} key={event._id}>
                             <Col  >

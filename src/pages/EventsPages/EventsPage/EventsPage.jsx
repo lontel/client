@@ -21,8 +21,6 @@ const EventListPage = () => {
             .catch(err => console.log(err))
     }
 
-
-
     return (
 
         events.length
