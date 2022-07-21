@@ -27,7 +27,7 @@ const EventListPage = () => {
 
         events.length
             ?
-            <EventList events={events} refreshEvents={loadEvents} />
+            <EventList events={events} loadEvents={loadEvents} />
             :
             < Loader />
     )

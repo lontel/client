@@ -2,6 +2,7 @@ import eventService from "../../../services/event.services"
 import { useEffect, useState } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 import { Link, useParams } from "react-router-dom"
+import Loader from "../../../components/Loader/Loader"
 
 const EventDetails = () => {
 
@@ -27,7 +28,7 @@ const EventDetails = () => {
         <Container>
             {
                 <>
-                    {/* <h1>Details of  {event.origin.address} to {event.destination.address}  </h1> */}
+                    <h1>Details of  {!event.origin ? <Loader /> : event.origin.address}  to {!event.destination ? <Loader /> : event.destination.address}  </h1>
                     <hr />
 
                     <Row>

@@ -14,7 +14,6 @@ const EventCard = ({ origin, destination, description, _id }) => {
         eventService
             .deleteEvent(_id)
             .then(() => {
-                console.log('hhhhhhhh')
                 navigate('/events')
             })
             .catch(err => console.error(err))

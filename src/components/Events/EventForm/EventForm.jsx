@@ -4,7 +4,7 @@ import eventService from "../../../services/event.services"
 import { useNavigate } from 'react-router-dom'
 
 
-const EventForm = ({ closeModal }) => {
+const EventForm = ({ closeModal, loadEvents }) => {
 
     const [eventData, setEventData] = useState({
         origin: '',
@@ -29,6 +29,7 @@ const EventForm = ({ closeModal }) => {
             .saveEvent(eventData)
             .then(() => {
                 navigate('/events')
+                loadEvents()
             })
             .catch(err => console.error(err))
     }

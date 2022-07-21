@@ -5,7 +5,7 @@ import { useState } from 'react'
 import EventForm from '../EventForm/EventForm'
 
 
-const EventList = ({ events }) => {
+const EventList = ({ events, loadEvents }) => {
 
     const [showModal, setShowModal] = useState(false)
 
@@ -29,7 +29,7 @@ const EventList = ({ events }) => {
                                     <Modal.Title>New Event</Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                    <EventForm closeModal={closeModal} /* Ojo! refreshCoasters={loadCoasters} */ />
+                                    <EventForm closeModal={closeModal} loadEvents={loadEvents} />
                                 </Modal.Body>
                             </Modal>
                         </Col>
