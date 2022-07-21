@@ -3,8 +3,8 @@ import { Form, Button } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom'
 import authService from './../../services/auth.services'
 import uploadServices from "../../services/upload.services"
-
 import { MessageContext } from './../../contexts/userMessage.context'
+
 
 const SignupForm = () => {
 
@@ -15,10 +15,11 @@ const SignupForm = () => {
         password: '',
         email: '',
         role: 'CYCLIST'
+
     })
 
     const [isLoading, setIsLoading] = useState(false)
-    
+
     const { setShowMessage } = useContext(MessageContext)
     const navigate = useNavigate()
 

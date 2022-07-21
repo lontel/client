@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../../contexts/auth.context'
 import { MessageContext } from '../../contexts/userMessage.context'
-// import { navigate } from 'react-router-dom'
 
 
 const NavBar = () => {
@@ -14,14 +13,13 @@ const NavBar = () => {
 
     const logout = () => {
 
-        // const navigate = useNavigate()
-
         setShowMessage({ show: true, title: 'Good bye!', text: 'Your session has been succesfully closed' })
         logoutUser()
-        // .then(() => navigate('/events'))
+
     }
 
     return (
+
         <Navbar bg="dark" expand="md" variant="dark" className='mb-5'>
             <Container>
                 <Link to="/">
@@ -64,6 +62,7 @@ const NavBar = () => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+
     )
 }
 

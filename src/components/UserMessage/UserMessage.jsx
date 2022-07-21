@@ -2,11 +2,13 @@ import { useContext } from 'react';
 import Toast from 'react-bootstrap/Toast'
 import { MessageContext } from '../../contexts/userMessage.context';
 
+
 function UserMessage() {
 
     const { setShowMessage, showMessage } = useContext(MessageContext)
 
     return (
+
         <Toast
             show={showMessage.show}
             onClose={() => setShowMessage({ ...showMessage, show: false })}
@@ -19,6 +21,7 @@ function UserMessage() {
             </Toast.Header>
             <Toast.Body>{showMessage.text}</Toast.Body>
         </Toast>
+
     );
 }
 

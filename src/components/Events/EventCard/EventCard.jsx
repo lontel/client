@@ -1,12 +1,10 @@
 import { Card, Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-
 import eventService from '../../../services/event.services'
+import { useNavigate, Link } from "react-router-dom"
 
-import { useNavigate } from "react-router-dom"
 
 const EventCard = ({ origin, destination, description, _id }) => {
-
+    console.log('LEON', _id)
     const navigate = useNavigate()
 
     const handleDelete = () => {
@@ -21,6 +19,7 @@ const EventCard = ({ origin, destination, description, _id }) => {
 
 
     return (
+
         <Card className="UserCard mb-4">
 
             <Card.Body>
@@ -43,7 +42,9 @@ const EventCard = ({ origin, destination, description, _id }) => {
                 </Link>
 
             </Card.Body>
+
         </Card >
+
     )
 }
 

@@ -1,8 +1,8 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import LoginForm from '../../components/LoginForm/LoginForm'
 
-const LoginPage = () => {
 
+const LoginPage = () => {
 
     return (
 

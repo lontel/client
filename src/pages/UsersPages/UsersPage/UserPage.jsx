@@ -3,6 +3,7 @@ import userService from "../../../services/user.services";
 import UserList from "../../../components/Users/UserList/UserList";
 import Loader from "../../../components/Loader/Loader";
 
+
 const UserListPage = () => {
 
     const [users, setUsers] = useState([])
@@ -16,11 +17,13 @@ const UserListPage = () => {
     }, [])
 
     return (
+
         users.length
             ?
             <UserList users={users} />
             :
             < Loader />
+
     )
 }
 

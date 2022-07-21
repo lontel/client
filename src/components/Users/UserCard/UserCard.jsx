@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 const UserCard = ({ username, role, profilePic, _id }) => {
 
     return (
+
         <Card className="UserCard mb-4">
             <Card.Img variant="top" src={profilePic} />
             <Card.Body>
@@ -23,6 +24,7 @@ const UserCard = ({ username, role, profilePic, _id }) => {
                 </Link>
             </Card.Body>
         </Card >
+
     )
 }
 

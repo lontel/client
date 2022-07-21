@@ -1,9 +1,7 @@
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Modal } from 'react-bootstrap'
 import EventCard from '../EventCard/EventCard'
-import { Modal } from 'react-bootstrap'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import EventForm from '../EventForm/EventForm'
-import { useEffect } from 'react'
 
 
 const EventList = ({ events, loadEvents }) => {
@@ -23,6 +21,7 @@ const EventList = ({ events, loadEvents }) => {
 
 
     return (
+
         <Row>
             <h1>List of events <span onClick={openModal}>+</span> </h1>
             <hr></hr>
@@ -49,6 +48,7 @@ const EventList = ({ events, loadEvents }) => {
                 })
             }
         </Row>
+
     )
 }
 

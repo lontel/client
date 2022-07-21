@@ -7,8 +7,6 @@ import Loader from "../../../components/Loader/Loader";
 const EventListPage = () => {
 
     const [events, setEvents] = useState([])
-    const [showModal, setShowModal] = useState(false)
-
 
     useEffect(() => {
         loadEvents()
@@ -28,6 +26,7 @@ const EventListPage = () => {
             <EventList events={events} loadEvents={loadEvents} />
             :
             < Loader />
+
     )
 }
 

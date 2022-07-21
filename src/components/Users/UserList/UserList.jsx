@@ -5,6 +5,7 @@ import UserCard from "../UserCard/UserCard"
 const UserList = ({ users }) => {
 
     return (
+
         <Row>
             {
                 users.map(user => {
@@ -17,6 +18,7 @@ const UserList = ({ users }) => {
                 })
             }
         </Row>
+
     )
 }
 

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 import { Link, useParams } from "react-router-dom"
 
+
 const UserDetails = () => {
 
     const [user, setUser] = useState({})

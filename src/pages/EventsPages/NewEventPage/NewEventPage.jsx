@@ -1,6 +1,7 @@
 import { Container } from 'react-bootstrap'
 import EventForm from '../../../components/Events/EventForm/EventForm'
 
+
 const NewEventPage = () => {
 
     return (
