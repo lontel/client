@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
-import NavBar from './components/NavBar/Navbar'
+import NavBar from './components/NavBar/NavBar'
 import AppRoutes from './routes/AppRoutes'
 import UserMessage from './components/UserMessage/UserMessage'
 
