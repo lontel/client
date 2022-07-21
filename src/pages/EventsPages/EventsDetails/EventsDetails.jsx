@@ -60,7 +60,7 @@ const EventDetails = () => {
                             </ul>
                             <hr />
 
-                            <Link to="/">
+                            <Link to="/events">
                                 <Button as="div" variant="dark">Back to event list</Button>
                             </Link>
                         </Col>

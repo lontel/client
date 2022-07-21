@@ -30,9 +30,10 @@ const LoginForm = () => {
         authService
             .login(loginData)
             .then(({ data }) => {
+                console.log(loginData)
                 storeToken(data.authToken)
                 authenticateUser()
-                setShowMessage({ show: true, title: `Welcome!`, text: 'You have succesfully login!' })
+                setShowMessage({ show: true, title: `Welcome! ${loginData.email}`, text: 'You have succesfully login!' })
                 navigate('/events')
 
             })

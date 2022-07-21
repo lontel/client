@@ -3,7 +3,6 @@ import eventService from "../../../services/event.services";
 import EventList from "../../../components/Events/EventList/EventList";
 import Loader from "../../../components/Loader/Loader";
 
-
 const EventListPage = () => {
 
     const [events, setEvents] = useState([])

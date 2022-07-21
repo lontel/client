@@ -35,7 +35,7 @@ const SignupForm = () => {
             .signup(signupData)
             .then(({ data }) => {
                 setShowMessage({
-                    show: true, title: `Welcome@, ${data.user.username}`, text: 'You have successfully registered'
+                    show: true, title: `Welcome, ${data.user.username}`, text: 'You have successfully registered'
                 })
                 navigate('/account/login')
             })
@@ -63,7 +63,9 @@ const SignupForm = () => {
 
     return (
 
-        <Form onSubmit={handleSubmit} encType={"multipart/form-data"}>
+
+        // encType = { "multipart/form-data"}
+        <Form onSubmit={handleSubmit} >
 
             <Form.Group className="mb-3" controlId="username">
                 <Form.Label>Username</Form.Label>

@@ -27,10 +27,7 @@ const EventForm = ({ closeModal, loadEvents }) => {
 
         eventService
             .saveEvent(eventData)
-            .then(() => {
-                navigate('/events')
-                loadEvents()
-            })
+            .then(() => loadEvents())
             .catch(err => console.error(err))
     }
 
