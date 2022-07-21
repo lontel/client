@@ -27,7 +27,7 @@ const AppRoutes = () => {
             <Route path='/events' element={<EventListPage />} />
             <Route path='/events/create' element={<NewEventPage />} />
             <Route path='/events/details/:id' element={<EventDetails />} />
-            <Route path='/events/edit/:id' element={<EventEditForm />} />
+            <Route path='/events/edit/:id' element={<EventEditForm/>} />
 
 
 

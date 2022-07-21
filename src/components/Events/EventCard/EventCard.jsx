@@ -1,24 +1,17 @@
 import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-
 import eventService from '../../../services/event.services'
 
-import { useNavigate } from "react-router-dom"
 
-const EventCard = ({ origin, destination, description, _id }) => {
-
-    const navigate = useNavigate()
+const EventCard = ({ origin, destination, description, _id, loadEvents }) => {
 
     const handleDelete = () => {
 
         eventService
             .deleteEvent(_id)
-            .then(() => {
-                navigate('/events')
-            })
+            .then(() => loadEvents())
             .catch(err => console.error(err))
     }
-
 
     return (
         <Card className="UserCard mb-4">
