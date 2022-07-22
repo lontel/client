@@ -1,11 +1,11 @@
-import './NavBar.css'
+import './NavBar_.css'
 import { Nav, Navbar, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../../contexts/auth.context'
 import { MessageContext } from '../../contexts/userMessage.context'
 
-const NavBar = () => {
+const NavBar_ = () => {
 
     const { user, logoutUser } = useContext(AuthContext)
     const { setShowMessage } = useContext(MessageContext)
@@ -67,4 +67,4 @@ const NavBar = () => {
     )
 }
 
-export default NavBar
+export default NavBar_
