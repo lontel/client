@@ -1,9 +1,9 @@
+import './EventsDetails.css'
 import eventService from "../../../services/event.services"
 import { useEffect, useState } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 import { Link, useParams } from "react-router-dom"
 import Loader from "../../../components/Loader/Loader"
-import './EventsDetails.css'
 import Map from "../../../components/Maps/Maps"
 
 
@@ -12,9 +12,6 @@ const EventDetails = () => {
     const [event, setEvent] = useState({})
 
     const { id } = useParams()
-
-    console.log(event, 'uuuuuuuu')
-
 
     useEffect(() => {
 
@@ -37,7 +34,6 @@ const EventDetails = () => {
                     <h1>Details of  {!event.origin ? <Loader /> : event.origin.address}  to {!event.destination ? <Loader /> : event.destination.address}  </h1>
                     <hr />
 
-                    {console.log('Que tal ', event.origin)}
                     <Row>
                         {console.log(event.origin?.address, 'yuhuuuu')}
                         <Col md={{ span: 6 }}>
@@ -46,9 +42,11 @@ const EventDetails = () => {
                             <ul>
                                 <li>Date: {event.date}</li>
                                 <li>Maximum of number of cyclists: {event.numberOfCyclists}</li>
-
                             </ul>
+
                             <hr />
+
+                            <h4>Cyclists who has joined in the event!</h4>
 
                             <Link to="/events">
                                 <Button as="div" variant="dark">Back to event list</Button>

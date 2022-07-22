@@ -42,6 +42,10 @@ class EventService {
         return this.api.delete(`/deleteEvent/${event_id}`)
     }
 
+    joinEvent(event_id) {
+        return this.api.get(`/event/${event_id}/join`)
+    }
+
 }
 
 const eventService = new EventService()

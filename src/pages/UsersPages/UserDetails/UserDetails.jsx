@@ -7,10 +7,8 @@ import { Link, useParams } from "react-router-dom"
 const UserDetails = () => {
 
     const [user, setUser] = useState({})
-
     const { account_id } = useParams()
 
-    // console.log(user, '--------')
 
     useEffect(() => {
 

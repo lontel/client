@@ -19,7 +19,7 @@ const EventCard = ({ origin, destination, _id, loadEvents }) => {
 
             <Card.Body>
 
-                <p>My trip is from {origin.address} to {destination.address} </p>
+                <p>The event is from {origin.address} to {destination.address} </p>
                 <Link to={`/events/details/${_id}`}>
                     <div className="d-grid">
                         <Button variant="dark" size="sm" as="div">Show details</Button>
@@ -33,6 +33,11 @@ const EventCard = ({ origin, destination, _id, loadEvents }) => {
                 <Link to={`/events`}>
                     <div className="d-grid">
                         <Button onClick={handleDelete} variant="danger" size="sm" as="div">Delete</Button>
+                    </div>
+                </Link>
+                <Link to={`/events/details/${_id}`}>
+                    <div className="d-grid">
+                        <Button onClick={handleDelete} variant="success" size="sm" as="div">Join Event</Button>
                     </div>
                 </Link>
 
