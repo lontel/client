@@ -10,6 +10,7 @@ import EventListPage from '../pages/EventsPages/EventsPage/EventsPage'
 import EventDetails from '../pages/EventsPages/EventsDetails/EventsDetails'
 import EventEditForm from '../components/Events/EventEditForm/EventEditForm'
 import NewEventPage from '../pages/EventsPages/NewEventPage/NewEventPage'
+import App from '../pages/MapPage/MapPage'
 
 
 const AppRoutes = () => {
@@ -29,6 +30,7 @@ const AppRoutes = () => {
             <Route path='/events/details/:id' element={<EventDetails />} />
             <Route path='/events/create' element={<NewEventPage />} />
             <Route path='/events/edit/:id' element={<EventEditForm />} />
+            {/* <Route path='/map/' element={<App />} /> */}
 
 
 

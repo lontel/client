@@ -3,9 +3,8 @@ import { useEffect, useState } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 import { Link, useParams } from "react-router-dom"
 import Loader from "../../../components/Loader/Loader"
-import mapsService from "../../../services/apiMaps.services"
 import './EventsDetails.css'
-import MyMapComponent from "../../../components/Maps/Maps"
+import Map from "../../../components/Maps/Maps"
 
 
 const EventDetails = () => {
@@ -13,7 +12,7 @@ const EventDetails = () => {
     const [event, setEvent] = useState({})
 
     const { id } = useParams()
-    // console.log(id)
+
 
     useEffect(() => {
 
@@ -44,12 +43,12 @@ const EventDetails = () => {
         <Container>
             {
                 <>
-                    <MyMapComponent idMap={id} />
+                    <Map idMap={id} />
                     <h1>Details of  {!event.origin ? <Loader /> : event.origin.address}  to {!event.destination ? <Loader /> : event.destination.address}  </h1>
                     <hr />
 
                     <Row>
-
+                        {console.log(event.origin, 'yuhuuuu')}
                         <Col md={{ span: 6 }}>
                             <h3>Description of the route:</h3>
                             <p>{event.description}</p>
