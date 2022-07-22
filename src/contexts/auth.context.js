@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import authService from '../services/auth.services'
 
-
 const AuthContext = createContext()
 
 function AuthProviderWrapper(props) {
@@ -25,6 +24,7 @@ function AuthProviderWrapper(props) {
             })
             .catch(err => logoutUser())
     }
+
 
     const logoutUser = () => {
         setUser(null)
