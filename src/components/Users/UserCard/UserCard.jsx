@@ -8,7 +8,7 @@ const UserCard = ({ username, role, profilePic, _id }) => {
     const navigate = useNavigate()
 
     const handleDelete = () => {
-console.log('este es el id de que se tiene que borrar', _id)
+        console.log('este es el id de que se tiene que borrar', _id)
         userService
             .deleteUser(_id)
             .then(() => navigate('/users'))

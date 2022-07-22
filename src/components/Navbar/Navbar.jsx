@@ -5,17 +5,14 @@ import { useContext } from 'react'
 import { AuthContext } from '../../contexts/auth.context'
 import { MessageContext } from '../../contexts/userMessage.context'
 
-
 const NavBar = () => {
 
     const { user, logoutUser } = useContext(AuthContext)
     const { setShowMessage } = useContext(MessageContext)
-
     const logout = () => {
 
         setShowMessage({ show: true, title: 'Good bye!', text: 'Your session has been succesfully closed' })
         logoutUser()
-
     }
 
     return (
@@ -32,7 +29,7 @@ const NavBar = () => {
 
                         {user ?
                             <>
-                                <Link to="/account/logout">
+                                <Link to="/account/login">
                                     <Nav.Link as="span" onClick={logout} >Logout</Nav.Link>
                                 </Link>
                             </>

@@ -59,12 +59,11 @@ const SignupForm = () => {
     }
 
 
-    const { username, bio, profilePic, password, email, role } = signupData
+    const { username, bio, password, email, role } = signupData
 
     return (
 
 
-        // encType = { "multipart/form-data"}
         <Form onSubmit={handleSubmit} >
 
             <Form.Group className="mb-3" controlId="username">
@@ -78,11 +77,6 @@ const SignupForm = () => {
                 <Form.Control as="textarea" type="text" value={bio} onChange={handleInputChange} name="bio" />
             </Form.Group>
 
-
-            {/* <Form.Group className="mb-3" controlId="profilePic">
-                <Form.Label>Avatar</Form.Label>
-                <Form.Control type="file" value={profilePic} onChange={handleInputChange} name="profilePic" />
-            </Form.Group> */}
 
             <Form.Group className="mb-3" controlId="imageUrl">
                 <Form.Label>Avatar</Form.Label>
@@ -104,9 +98,9 @@ const SignupForm = () => {
 
             <Form.Group className="mb-3">
                 <Form.Label>Select role</Form.Label>
-                <Form.Select >
-                    <option value={'CYCLIST'} name='role'>Cyclist</option>
-                    <option value={'SPONSOR'} name='role'>Sponsor</option>
+                <Form.Select onChange={handleInputChange} name="role">
+                    <option value={'CYCLIST'}>Cyclist</option>
+                    <option value={'SPONSOR'}>Sponsor</option>
                 </Form.Select>
             </Form.Group>
 

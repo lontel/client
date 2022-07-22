@@ -7,6 +7,16 @@ class UserService {
         this.api = axios.create({
             baseURL: `${process.env.REACT_APP_API_URL}/account`
         })
+        this.api.interceptors.request.use((config) => {
+
+            const storedToken = localStorage.getItem("authToken");
+
+            if (storedToken) {
+                config.headers = { Authorization: `Bearer ${storedToken}` }
+            }
+
+            return config
+        })
     }
 
 
@@ -23,9 +33,10 @@ class UserService {
     }
 
     deleteUser(account_id) {
+        console.log('desde el servicio', account_id)
         return this.api.delete(`/deleteAccount/${account_id}`)
     }
-    
+
 }
 
 
