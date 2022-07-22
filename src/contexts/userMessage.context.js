@@ -12,9 +12,11 @@ function MessageProviderWrapper(props) {
     })
 
     return (
+
         <MessageContext.Provider value={{ setShowMessage, showMessage }}>
             {props.children}
         </MessageContext.Provider>
+
     )
 }
 

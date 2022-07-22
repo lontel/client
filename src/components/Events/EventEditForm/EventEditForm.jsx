@@ -4,6 +4,7 @@ import eventService from "../../../services/event.services"
 import { useNavigate } from 'react-router-dom'
 import { useParams } from "react-router-dom"
 
+
 const EventEditForm = () => {
 
     const { id } = useParams()

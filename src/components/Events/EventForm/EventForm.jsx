@@ -34,6 +34,7 @@ const EventForm = ({ closeModal, loadEvents }) => {
     const { origin, destination, description, numberOfCyclists, date } = eventData
 
     return (
+
         <Form onSubmit={handleSubmit}>
 
             <Form.Group className="mb-3" controlId="origin">
@@ -72,6 +73,7 @@ const EventForm = ({ closeModal, loadEvents }) => {
             </div>
 
         </Form>
+
     )
 }
 
