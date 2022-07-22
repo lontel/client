@@ -9,8 +9,8 @@ const NavBar = () => {
 
     const { user, logoutUser } = useContext(AuthContext)
     const { setShowMessage } = useContext(MessageContext)
-    const logout = () => {
 
+    const logout = () => {
         setShowMessage({ show: true, title: 'Good bye!', text: 'Your session has been succesfully closed' })
         logoutUser()
     }
@@ -49,10 +49,6 @@ const NavBar = () => {
 
                         <Link to="/users">
                             <Nav.Link as="span">Users</Nav.Link>
-                        </Link>
-
-                        <Link to="/events/create">
-                            <Nav.Link as="span">Create Event</Nav.Link>
                         </Link>
 
                         <Link to="/events/details/:id">

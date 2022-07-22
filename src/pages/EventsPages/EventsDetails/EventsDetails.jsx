@@ -11,12 +11,12 @@ const EventDetails = () => {
 
     const [event, setEvent] = useState({})
 
-    const { id } = useParams()
+    const { event_id } = useParams()
 
     useEffect(() => {
 
         eventService
-            .getOneEvent(id)
+            .getOneEvent(event_id)
             .then(({ data }) => {
                 setEvent(data)
             })

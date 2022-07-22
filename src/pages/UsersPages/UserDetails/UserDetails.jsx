@@ -11,7 +11,6 @@ const UserDetails = () => {
 
 
     useEffect(() => {
-
         userService
             .getOneUser(account_id)
             .then(({ data }) => setUser(data))

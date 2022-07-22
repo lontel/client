@@ -1,32 +1,9 @@
-import { useState, useEffect } from "react";
-import eventService from "../../../services/event.services";
-import EventList from "../../../components/Events/EventList/EventList";
-import Loader from "../../../components/Loader/Loader";
+import EventList from "../../../components/Events/EventList/EventList"
 
 const EventListPage = () => {
 
-    const [events, setEvents] = useState([])
-
-    useEffect(() => {
-        loadEvents()
-    }, [])
-
-    const loadEvents = () => {
-        eventService
-            .getEvents()
-            .then(({ data }) => setEvents(data))
-            .catch(err => console.log(err))
-    }
-
-    return (
-
-        events.length
-            ?
-            <EventList events={events} loadEvents={loadEvents} />
-            :
-            < Loader />
-
-    )
+    return (<EventList />)
+    
 }
 
 export default EventListPage

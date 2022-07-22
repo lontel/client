@@ -19,7 +19,6 @@ const EventForm = ({ closeModal, loadEvents }) => {
     const handleChange = e => {
         const { value, name } = e.target
         setEventData({ ...eventData, [name]: value })
-
     }
 
     const handleSubmit = e => {

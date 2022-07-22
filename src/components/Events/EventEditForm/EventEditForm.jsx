@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom"
 
 const EventEditForm = () => {
 
-    const { id } = useParams()
+    const { event_id } = useParams()
 
     const [eventData, setEventData] = useState({
         origin: '',
@@ -19,7 +19,7 @@ const EventEditForm = () => {
 
     useEffect(() => {
         eventService
-            .getOneEvent(id)
+            .getOneEvent(event_id)
             .then(({ data }) => {
                 setEventData({
                     origin: data.origin.address,
@@ -46,7 +46,7 @@ const EventEditForm = () => {
         e.preventDefault()
 
         eventService
-            .editEvent(id, eventData)
+            .editEvent(event_id, eventData)
             .then(() => navigate('/events'))
             .catch(err => console.error(err))
 

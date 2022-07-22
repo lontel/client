@@ -14,18 +14,18 @@ import NewEventPage from '../pages/EventsPages/NewEventPage/NewEventPage'
 const AppRoutes = () => {
 
     return (
-
+        // PROTEGER RUTAS
         <Routes>
 
             <Route path='/' element={<HomePage />} />
             <Route path='/users' element={<UserListPage />} />
             <Route path='/account/details/:account_id' element={<UserDetails />} />
-            <Route path='/account/edit/:id' element={<UserEdit />} />
+            <Route path='/account/edit/:user_id' element={<UserEdit />} />
             <Route path='/account/sign-up' element={<SignupPage />} />
             <Route path='/account/login' element={<LoginPage />} />
             <Route path='/events' element={<EventListPage />} />
-            <Route path='/events/details/:id' element={<EventDetails />} />
-            <Route path='/events/edit/:id' element={<EventEditForm />} />
+            <Route path='/events/details/:event_id' element={<EventDetails />} />
+            <Route path='/events/edit/:event_id' element={<EventEditForm />} />
             <Route path='/events/create' element={<NewEventPage />} />
 
         </Routes>

@@ -9,7 +9,7 @@ const UserEdit = () => {
 
                 <Col md={{ offset: 3, span: 6 }}>
 
-                    <h1>Edit user</h1>
+                    <h1>Edit user details</h1>
 
                     <hr />
 

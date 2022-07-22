@@ -6,31 +6,33 @@ import { Form, Button } from "react-bootstrap"
 
 
 const UserEditForm = () => {
-
+    
     // const [isLoading, setIsLoading] = useState(false)
+    const { user_id } = useParams()
+    const navigate = useNavigate()
 
-    const [editData, setEditData] = useState({ 
-        username: '', 
+    const [editData, setEditData] = useState({
+        username: '',
         // password: '',
-        email: '', 
-        bio: ''     
+        email: '',
+        bio: '',
+        role:''
     })
 
     useEffect(() => {
         userService
-            .getOneUser(id)
-            .then(({ data })=>{
+            .getOneUser(user_id)
+            .then(({ data }) => {
                 setEditData({
                     username: data.username,
                     password: data.password,
-                    email: data.email, 
-                    bio: data.bio 
+                    email: data.email,
+                    bio: data.bio,
+                    role: data.role
                 })
             })
             .catch(err => console.log(err))
     }, [])
-    const { id } = useParams()
-    const navigate = useNavigate()
 
     // console.log(id, 'este es el id del usuario que se tiene que editar')
 
@@ -43,7 +45,7 @@ const UserEditForm = () => {
         e.preventDefault()
 
         userService
-            .editUser(id)
+            .editUser(user_id)
             .then(() => navigate('/users'))
             .catch(err => console.log(err))
     }
@@ -99,13 +101,13 @@ const UserEditForm = () => {
             </Form.Group> */}
 
 
-            {/* <Form.Group className="mb-3">
+            <Form.Group className="mb-3">
                 <Form.Label>Select role</Form.Label>
-                <Form.Select onChange={handleInputChange} name="role">
+                <Form.Select onChange={handleInputChange} name="role" value={'role'}>
                     <option value={'CYCLIST'}>Cyclist</option>
                     <option value={'SPONSOR'}>Sponsor</option>
                 </Form.Select>
-            </Form.Group> */}
+            </Form.Group>
 
             {/* <Form.Group className="mb-3">
                 <Form.Check type="checkbox" label="Send me special offers" />

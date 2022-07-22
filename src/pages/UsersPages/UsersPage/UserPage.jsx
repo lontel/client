@@ -6,23 +6,14 @@ import Loader from "../../../components/Loader/Loader";
 
 const UserListPage = () => {
 
-    const [users, setUsers] = useState([])
-
-    useEffect(() => {
-
-        userService
-            .getUsers()
-            .then(({ data }) => setUsers(data))
-            .catch(err => console.log(err))
-    }, [])
-
     return (
 
-        users.length
-            ?
-            <UserList users={users} />
-            :
-            < Loader />
+        <>
+
+            <h1>Listado de usuarios</h1>
+            <UserList />
+
+        </>
 
     )
 }
