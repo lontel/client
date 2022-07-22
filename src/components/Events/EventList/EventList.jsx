@@ -1,6 +1,6 @@
 import { Row, Col, Modal } from 'react-bootstrap'
 import EventCard from '../EventCard/EventCard'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import EventForm from '../EventForm/EventForm'
 
 
@@ -14,6 +14,7 @@ const EventList = ({ events, loadEvents }) => {
     return (
 
         <Row>
+
             <h1>List of events <span onClick={openModal}>+</span> </h1>
             <hr></hr>
             {
@@ -37,7 +38,6 @@ const EventList = ({ events, loadEvents }) => {
                     <EventForm closeModal={closeModal} loadEvents={loadEvents} />
                 </Modal.Body>
             </Modal>
-
 
         </Row>
 

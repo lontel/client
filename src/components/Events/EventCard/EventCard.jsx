@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom'
 import eventService from '../../../services/event.services'
 
 
-
 const EventCard = ({ origin, destination, _id, loadEvents }) => {
 
-    console.log('---------', _id)
     const handleDelete = () => {
 
         eventService

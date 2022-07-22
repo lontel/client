@@ -42,7 +42,6 @@ class EventService {
         return this.api.delete(`/deleteEvent/${event_id}`)
     }
 
-
 }
 
 const eventService = new EventService()

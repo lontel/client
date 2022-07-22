@@ -13,6 +13,8 @@ const EventDetails = () => {
 
     const { id } = useParams()
 
+    console.log(event, 'uuuuuuuu')
+
 
     useEffect(() => {
 
@@ -26,29 +28,18 @@ const EventDetails = () => {
     }, [])
 
 
-    // useEffect(() => {
-
-    //     mapsService
-    //         .getOneMap(id)
-    //         .then(({ data }) => {
-    //             setEvent(data)
-    //             console.log('--------------', data)
-    //         })
-    //         .catch(err => console.error(err))
-
-    // }, [])
-
     return (
 
         <Container>
             {
                 <>
-                    <Map idMap={id} />
+                    <Map event={event} />
                     <h1>Details of  {!event.origin ? <Loader /> : event.origin.address}  to {!event.destination ? <Loader /> : event.destination.address}  </h1>
                     <hr />
 
+                    {console.log('Que tal ', event.origin)}
                     <Row>
-                        {console.log(event.origin, 'yuhuuuu')}
+                        {console.log(event.origin?.address, 'yuhuuuu')}
                         <Col md={{ span: 6 }}>
                             <h3>Description of the route:</h3>
                             <p>{event.description}</p>

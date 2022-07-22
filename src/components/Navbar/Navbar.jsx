@@ -29,7 +29,6 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
 
-
                         {user ?
                             <>
                                 <Link to="/account/logout">
@@ -46,18 +45,23 @@ const NavBar = () => {
                                 </Link>
                             </>
                         }
+
                         <Link to="/events">
                             <Nav.Link as="span">Events</Nav.Link>
                         </Link>
+
                         <Link to="/users">
                             <Nav.Link as="span">Users</Nav.Link>
                         </Link>
+
                         <Link to="/events/create">
                             <Nav.Link as="span">Create Event</Nav.Link>
                         </Link>
+
                         <Link to="/events/details/:id">
                             <Nav.Link as="span">Details Event</Nav.Link>
                         </Link>
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>
