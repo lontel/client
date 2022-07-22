@@ -25,6 +25,7 @@ class UserService {
     deleteUser(account_id) {
         return this.api.delete(`/deleteAccount/${account_id}`)
     }
+    
 }
 
 

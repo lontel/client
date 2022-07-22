@@ -4,9 +4,9 @@ import eventService from '../../../services/event.services'
 
 
 
-const EventCard = ({ origin, destination, description, _id, loadEvents }) => {
+const EventCard = ({ origin, destination, _id, loadEvents }) => {
 
-    console.log('LEON', _id)
+    console.log('---------', _id)
     const handleDelete = () => {
 
         eventService
