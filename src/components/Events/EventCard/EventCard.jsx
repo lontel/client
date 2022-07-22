@@ -1,12 +1,11 @@
 import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import eventService from '../../../services/event.services'
-import { useNavigate, Link } from "react-router-dom"
 
 
-const EventCard = ({ origin, destination, description, _id, loadEvents }) => {
+const EventCard = ({ origin, destination, _id, loadEvents }) => {
 
-    console.log('LEON', _id)
+    console.log('---------', _id)
     const handleDelete = () => {
 
         eventService

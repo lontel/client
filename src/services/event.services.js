@@ -35,7 +35,6 @@ class EventService {
     }
 
     editEvent(event_id, eventData) {
-        console.log('algo delante', event_id)
         return this.api.put(`/updateEvent/${event_id}`, eventData)
     }
 
