@@ -72,18 +72,6 @@ const SignupForm = () => {
             </Form.Group>
 
 
-            <Form.Group className="mb-3" controlId="bio">
-                <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" type="text" value={bio} onChange={handleInputChange} name="bio" />
-            </Form.Group>
-
-
-            <Form.Group className="mb-3" controlId="imageUrl">
-                <Form.Label>Avatar</Form.Label>
-                <Form.Control type="file" onChange={handleFileInput} name="profilePic" />
-            </Form.Group>
-
-
             <Form.Group className="mb-3" controlId="password">
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" value={password} onChange={handleInputChange} name="password" />
@@ -93,6 +81,18 @@ const SignupForm = () => {
             <Form.Group className="mb-3" controlId="email">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" value={email} onChange={handleInputChange} name="email" />
+            </Form.Group>
+
+
+            <Form.Group className="mb-3" controlId="bio">
+                <Form.Label>Description</Form.Label>
+                <Form.Control as="textarea" type="text" value={bio} onChange={handleInputChange} name="bio" />
+            </Form.Group>
+
+
+            <Form.Group className="mb-3" controlId="imageUrl">
+                <Form.Label>Avatar</Form.Label>
+                <Form.Control type="file" onChange={handleFileInput} name="profilePic" />
             </Form.Group>
 
 

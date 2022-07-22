@@ -27,11 +27,11 @@ const UserCard = ({ username, role, profilePic, _id }) => {
                     <div className="d-grid">
                         <Button variant="dark" size="sm" as="div">Show details</Button>
                     </div>
-                    <Link to={`/account/delete/${_id}`}>
-                        <div className="d-grid">
-                            <Button onClick={handleDelete} variant="danger" size="sm" as="div">Delete</Button>
-                        </div>
-                    </Link>
+                </Link>
+                <Link to={`/account/delete/${_id}`}>
+                    <div className="d-grid">
+                        <Button onClick={handleDelete} variant="danger" size="sm" as="div">Delete</Button>
+                    </div>
                 </Link>
             </Card.Body>
         </Card >

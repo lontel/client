@@ -29,11 +29,11 @@ class UserService {
     }
 
     editUser(account_id) {
+        console.log('desde el servicio', account_id)
         return this.api.put(`/edit/${account_id}`)
     }
 
     deleteUser(account_id) {
-        console.log('desde el servicio', account_id)
         return this.api.delete(`/deleteAccount/${account_id}`)
     }
 
