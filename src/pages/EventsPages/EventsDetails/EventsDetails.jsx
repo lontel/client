@@ -1,10 +1,11 @@
 import './EventsDetails.css'
 import eventService from "../../../services/event.services"
 import { useEffect, useState } from "react"
-import { Container, Row, Col, Button } from "react-bootstrap"
+import { Container, Row, Col, Button, Form } from "react-bootstrap"
 import { Link, useParams } from "react-router-dom"
 import Loader from "../../../components/Loader/Loader"
 import Map from "../../../components/Maps/Maps"
+import Chat from '../../../components/Chat/Chat'
 
 
 const EventDetails = () => {
@@ -26,7 +27,7 @@ const EventDetails = () => {
 
 
     return (
-
+<>
         <Container>
             {
                 <>
@@ -57,7 +58,8 @@ const EventDetails = () => {
             }
 
         </Container>
-
+        <Chat/>
+        </>
 
     )
 }
