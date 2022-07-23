@@ -7,15 +7,13 @@ function SearchBar({ filterEvent }) {
         setSearchBar(e.target.value)
         filterEvent(e.target.value)
     }
-    console.log('bañucjuvqñduhv', filterEvent)
+    console.log('Que estoy escribiendo aqui', SearchBar)
 
     return (
         <>
             <h3>Search Events</h3>
             <input type="text" onChange={handleChange} />
-            <br />
-            <input type="checkbox" name='search' />
-            <label htmlFor="search">Only show products in stock</label>
+
         </>
     )
 }

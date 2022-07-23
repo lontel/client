@@ -9,9 +9,11 @@ import SearchBar from '../../SearchBar/SearchBar'
 
 const EventList = () => {
 
-    const [showModal, setShowModal] = useState(false)
     const [events, setEvents] = useState([])
     const [copyEvents, copySetEvents] = useState([])
+
+    const [showModal, setShowModal] = useState(false)
+
 
     const filterEvent = letter => {
 
@@ -19,26 +21,30 @@ const EventList = () => {
             setEvents(copyEvents)
         }
         else {
-            const filteredEvents = copyEvents.filter(elm => elm.origin.startsWith(letter))
+            const filteredEvents = copyEvents.filter(elm => elm.origin.address.startsWith(letter))
             copySetEvents(filteredEvents)
+            console.log('FILTRO', copyEvents)
+
         }
 
-        console.log('FILTRO', copyEvents)
-
-
     }
+
     const openModal = () => setShowModal(true)
     const closeModal = () => setShowModal(false)
 
 
     useEffect(() => {
+        copySetEvents()
         loadEvents()
     }, [])
 
     const loadEvents = () => {
         eventService
             .getEvents()
-            .then(({ data }) => setEvents(data))
+            .then(({ data }) => {
+                setEvents(data)
+                copySetEvents(data)
+            })
             .catch(err => console.log(err))
     }
 
@@ -58,7 +64,7 @@ const EventList = () => {
                                 return (
                                     <Col md={3} key={event._id}>
                                         <Col  >
-                                            <EventCard {...event} loadEvents={loadEvents} events={copyEvents} filterEvent={filterEvent} />
+                                            <EventCard {...event} filterEvent={filterEvent} loadEvents={loadEvents} events={copyEvents} />
                                         </Col>
                                     </Col>
                                 )
@@ -76,7 +82,6 @@ const EventList = () => {
                         </Modal>
 
                     </Row>
-
                     :
                     < Loader />
             }
