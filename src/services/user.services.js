@@ -28,9 +28,9 @@ class UserService {
         return this.api.get(`/getOneAccount/${account_id}`)
     }
 
-    editUser(account_id) {
-        console.log('desde el servicio', account_id)
-        return this.api.put(`/edit/${account_id}`)
+    editUser(account_id, accountData) {
+        console.log('edit desde servicio user')
+        return this.api.put(`/updateAccount/${account_id}`, accountData)
     }
 
     deleteUser(account_id) {
