@@ -4,13 +4,29 @@ import { useState, useEffect } from 'react'
 import EventForm from '../EventForm/EventForm'
 import eventService from '../../../services/event.services'
 import Loader from '../../Loader/Loader'
+import SearchBar from '../../SearchBar/SearchBar'
 
 
 const EventList = () => {
 
     const [showModal, setShowModal] = useState(false)
     const [events, setEvents] = useState([])
+    const [copyEvents, copySetEvents] = useState([])
 
+    const filterEvent = letter => {
+
+        if (letter === '') {
+            setEvents(copyEvents)
+        }
+        else {
+            const filteredEvents = copyEvents.filter(elm => elm.origin.startsWith(letter))
+            copySetEvents(filteredEvents)
+        }
+
+        console.log('FILTRO', copyEvents)
+
+
+    }
     const openModal = () => setShowModal(true)
     const closeModal = () => setShowModal(false)
 
@@ -36,12 +52,13 @@ const EventList = () => {
 
                         <h1>List of events <span onClick={openModal}>+</span> </h1>
                         <hr></hr>
+                        <SearchBar filterEvent={filterEvent} />
                         {
                             events.map(event => {
                                 return (
                                     <Col md={3} key={event._id}>
                                         <Col  >
-                                            <EventCard {...event} loadEvents={loadEvents} />
+                                            <EventCard {...event} loadEvents={loadEvents} events={copyEvents} filterEvent={filterEvent} />
                                         </Col>
                                     </Col>
                                 )

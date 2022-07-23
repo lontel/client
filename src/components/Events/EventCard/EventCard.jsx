@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import eventService from '../../../services/event.services'
 
 
+
 const EventCard = ({ origin, destination, _id, loadEvents }) => {
 
     const handleDelete = () => {
@@ -13,10 +14,18 @@ const EventCard = ({ origin, destination, _id, loadEvents }) => {
             .catch(err => console.error(err))
     }
 
+    const handleJoin = () => {
+
+        eventService
+            .joinEvent(_id)
+            .then(() => loadEvents())
+            .catch(err => console.error(err))
+    }
+
     return (
 
-        <Card className="UserCard mb-4">
 
+        <Card className="UserCard mb-4">
             <Card.Body>
 
                 <p>The event is from {origin.address} to {destination.address} </p>
@@ -37,7 +46,7 @@ const EventCard = ({ origin, destination, _id, loadEvents }) => {
                 </Link>
                 <Link to={`/events/details/${_id}`}>
                     <div className="d-grid">
-                        <Button onClick={handleDelete} variant="success" size="sm" as="div">Join Event</Button>
+                        <Button onClick={handleJoin} variant="success" size="sm" as="div">Join Event</Button>
                     </div>
                 </Link>
 

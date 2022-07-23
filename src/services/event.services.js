@@ -43,7 +43,7 @@ class EventService {
     }
 
     joinEvent(event_id) {
-        return this.api.get(`/event/${event_id}/join`)
+        return this.api.put(`/event/${event_id}/join`)
     }
 
 }
