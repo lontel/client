@@ -26,7 +26,6 @@ class EventService {
 
     getOneEvent(event_id) {
 
-        console.log('------------', event_id)
         return this.api.get(`/getOneEvent/${event_id}`)
     }
 
