@@ -57,7 +57,9 @@ const EventDetails = ({ loadEvents }) => {
                                 <li>Date: {event.date}</li>
                                 <li>Maximum of number of cyclists: {event.numberOfCyclists}</li>
                             </ul>
-
+                            <div>
+                                {event.cyclists}
+                            </div>
                             <hr />
 
                             <h4>Cyclists who has joined in the event!</h4>
@@ -82,6 +84,7 @@ const EventDetails = ({ loadEvents }) => {
                         </Col>
                     </Row>
                     <Chat />
+
                 </>
             }
 

@@ -10,29 +10,24 @@ import SearchBar from '../../SearchBar/SearchBar'
 const EventList = () => {
 
     const [events, setEvents] = useState([])
-    const [copyEvents, copySetEvents] = useState([])
     const [showModal, setShowModal] = useState(false)
 
 
-    const filterEvent = letter => {
+    const filteredEvents = e => {
 
-        if (letter === '') {
-            setEvents(copyEvents)
-        }
-        else {
-            const filteredEvents = copyEvents.filter(elm => elm.origin.address.startsWith(letter))
-            copySetEvents(filteredEvents)
-
-        }
+        eventService
+            .filterEvents(e.target.value)
+            .then(({ data }) => {
+                setEvents(data)
+            })
+            .catch(err => console.log(err))
 
     }
 
     const openModal = () => setShowModal(true)
     const closeModal = () => setShowModal(false)
 
-
     useEffect(() => {
-        // copySetEvents()
         loadEvents()
     }, [])
 
@@ -41,11 +36,9 @@ const EventList = () => {
             .getEvents()
             .then(({ data }) => {
                 setEvents(data)
-                copySetEvents(data)
             })
             .catch(err => console.log(err))
     }
-
 
     return (
 
@@ -56,13 +49,13 @@ const EventList = () => {
 
                         <h1>List of events <span onClick={openModal}>+</span></h1>
                         <hr></hr>
-                        <SearchBar filterEvent={filterEvent} />
+                        <SearchBar filterEvents={filteredEvents} />
                         {
                             events.map(event => {
                                 return (
                                     <Col md={3} key={event._id}>
                                         <Col  >
-                                            <EventCard {...event} filterEvent={filterEvent} loadEvents={loadEvents} events={copyEvents} />
+                                            <EventCard {...event} />
                                         </Col>
                                     </Col>
                                 )

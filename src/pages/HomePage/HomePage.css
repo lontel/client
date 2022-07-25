@@ -16,8 +16,11 @@
 
 
 :root {
-    --body-bg-color: #1a1c1d;
+    --body-bg-color: #2c3439;
     --text-color: #aaaebc;
+    --hr-color: #26292a;
+    --transition-duration: 0.3s;
+    --transition-delay: 0.2s;
     --red: #e74c3c;
 }
 
@@ -26,11 +29,16 @@ ul {
 }
 
 a {
-    color: inherit;
+    color: white;
     text-decoration: none;
 }
 
 
+
+hr {
+    border-color: var(--hr-color);
+    margin: 20px 0;
+}
 
 .menu {
     display: flex;
@@ -47,26 +55,89 @@ a {
     padding: 10px;
 }
 
-.menu a svg {
+.menu .border {
     position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    background: currentColor;
+    transition: transform var(--transition-duration) ease-in-out;
 }
 
-.menu a svg path {
-    fill: transparent;
-    stroke-width: 2px;
-    stroke: currentColor;
-    stroke-dasharray: 89.7506103515625;
-    stroke-dashoffset: -89.7506103515625;
-    transition: stroke-dashoffset 0.5s cubic-bezier(0.29, 0.68, 0.74, 1.02);
+.menu .border-top,
+.menu .border-bottom {
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
 }
 
-.menu a:hover svg path {
-    stroke-dashoffset: 0;
+.menu .border-left,
+.menu .border-right {
+    width: 1px;
+    height: 100%;
+    transform: scaleY(0);
 }
 
+.menu .border-top,
+.menu .border-left,
+.menu .border-right {
+    top: 0;
+}
+
+.menu .border-bottom {
+    bottom: 0;
+    transform-origin: bottom right;
+}
+
+.menu .border-top {
+    transform-origin: top left;
+}
+
+.menu .border-left {
+    transform-origin: bottom left;
+}
+
+.menu .border-right {
+    left: auto;
+    right: 0;
+    transform-origin: top right;
+}
+
+.menu a:hover .border-top,
+.menu a:hover .border-bottom {
+    transform: scaleX(1);
+}
+
+.menu a:hover .border-left,
+.menu a:hover .border-right {
+    transform: scaleY(1);
+}
+
+.menu a:hover .border-right {
+    transition-delay: var(--transition-delay);
+}
+
+.menu a:hover .border-bottom {
+    transition-delay: calc(var(--transition-delay) * 2);
+}
+
+.menu a:hover .border-left {
+    transition-delay: calc(var(--transition-delay) * 3);
+}
+
+
+/* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.menu[data-animation="diagonal"] .border-left {
+    transform-origin: top left;
+}
+
+.menu[data-animation="diagonal"] .border-right,
+.menu[data-animation="diagonal"] .border-bottom {
+    transform-origin: bottom right;
+}
+
+.menu[data-animation="diagonal"] a:hover [class^=border] {
+    transition-delay: 0s;
+}
 
 /* FOOTER
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -83,5 +154,6 @@ a {
 
 footer {
     background-color: #000000;
-    height: 70px;
+    height: 46px;
+
 }

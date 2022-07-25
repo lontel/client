@@ -45,6 +45,10 @@ class EventService {
         return this.api.put(`/event/${event_id}/join`)
     }
 
+    filterEvents(query) {
+        return this.api.get(`/filterEvents?from_to=${query}`)
+    }
+
 }
 
 const eventService = new EventService()

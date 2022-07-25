@@ -18,7 +18,7 @@ const EventCard = ({ origin, destination, _id }) => {
                 <p>The event is from {origin.address} to {destination.address} </p>
                 <Link to={`/events/details/${_id}`}>
                     {/* //aqui tenemos que poner la ruta con el zoom alejado */}
-                    <Map />
+                    {/* <Map /> */}
                     <div className="d-grid">
                         <Button variant="dark" size="sm" as="div">Show more details</Button>
                     </div>
