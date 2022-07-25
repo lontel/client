@@ -44,7 +44,7 @@ const EventList = () => {
             {
                 <Row>
 
-                <h1>List of events <span onClick={openModal} className='addPlus' >+</span></h1>
+                    <h1>List of events <span onClick={openModal} className='addPlus' >+</span></h1>
                     <hr></hr>
                     <SearchBar filterEvents={filteredEvents} />
                     {events.length ?
@@ -62,7 +62,7 @@ const EventList = () => {
 
                         :
                         <img src='' />
-                        }
+                    }
 
                     <Modal show={showModal} onHide={closeModal}>
                         <Modal.Header closeButton>

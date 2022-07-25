@@ -43,6 +43,6 @@ class CommentService {
 
 }
 
-const commentService = new EventService()
+const commentService = new CommentService()
 
 export default commentService

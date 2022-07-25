@@ -1,51 +1,62 @@
-import { createElement } from "react"
 import { useEffect, useState } from "react"
 import { Form, Container, Button, Col } from "react-bootstrap"
 import React from "react"
+import commentService from "../../services/comment.services"
+import CardChat from "./CardChat"
+
 
 const Chat = () => {
 
-    const [chatMessage, setChatMessage] = useState([])
+    const [chatMessage, setChatMessage] = useState({ message: '' })
 
-    // const handleInputChange = e => {
-    //     const { value, name } = e.target
-    //     setChatMessage({ ...chatMessage, [name]: value })
-    // }
+    const handleInputChange = e => {
+        const { value, name } = e.target
+        setChatMessage({ ...chatMessage, [name]: value })
+    }
 
     const handleForm = e => {
         e.preventDefault()
-        // const { chatMessage } = e.target
-        // setChatMessage(chatMessage)
-        const element = React.createElement(
-            'div',
-            { className: 'container' },
-            'Hello word'
-        );
+
+        commentService
+            .saveComment(chatMessage)
+            .then(({ data }) => {
+                console.log(data, 'que hay en este data')
+                setChatMessage(data)
+            })
+            .catch(err => console.log(err))
 
     }
 
-    // useEffect(() => {
-    //     setChatMessage()
-    // })
+
+
+    const { message } = chatMessage
 
     return (
+        <>
+            <div>
+                <CardChat state={setChatMessage} />
+            </div>
+            <Container>
 
-        <Container>
-            <Col md={{ offset: 4, span: 4 }}>
-                <Form >
+                <Col md={{ offset: 4, span: 4 }}>
+                    <Form onSubmit={handleForm} >
 
-                    <Form.Group className="mb-3" controlId="bio">
-                        <Form.Label>Leve your message here!</Form.Label>
-                        <Form.Control as="textarea" type="text" name="message" />
-                    </Form.Group>
+                        <Form.Group className="mb-3" controlId="bio">
+                            <Form.Label>Leave your message here!</Form.Label>
+                            <Form.Control as="textarea" type="text" name="message" value={message} onChange={handleInputChange} />
+                        </Form.Group>
 
-                    <Button variant="dark" type="submit" onClick={handleForm}>
-                        Submit
-                    </Button>
+                        <Button variant="dark" type="submit" >
+                            Submit
+                        </Button>
 
-                </Form>
-            </Col>
-        </Container>
+                    </Form>
+                </Col>
+            </Container>
+
+
+
+        </>
 
     )
 }
