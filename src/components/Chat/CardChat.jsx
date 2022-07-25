@@ -25,7 +25,11 @@ const CardChat = () => {
     return (
         message.map(elm => {
             return (
-                <p>{elm.message}</p>
+                <ul>
+                    <li>
+                        <p>{elm.message}</p>
+                    </li>
+                </ul>
             )
         })
     )
