@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom"
 import Loader from "../../../components/Loader/Loader"
 import Map from "../../../components/Maps/Maps"
 import Chat from '../../../components/Chat/Chat'
+import UsersJoined from '../../../components/Users/UsersJoined/UsersJoined'
 
 
 const EventDetails = ({ loadEvents }) => {
@@ -19,6 +20,7 @@ const EventDetails = ({ loadEvents }) => {
         eventService
             .getOneEvent(event_id)
             .then(({ data }) => {
+                console.log(data)
                 setEvent(data)
             })
             .catch(err => console.error(err))
@@ -57,12 +59,29 @@ const EventDetails = ({ loadEvents }) => {
                                 <li>Date: {event.date}</li>
                                 <li>Maximum of number of cyclists: {event.numberOfCyclists}</li>
                             </ul>
-                            <div>
-                                {event.cyclists}
-                            </div>
+
                             <hr />
 
                             <h4>Cyclists who has joined in the event!</h4>
+                            {
+                                event.cyclists ?
+
+
+                                    event.cyclists.map(e => {
+                                        return (
+                                            <Col md={3} >
+                                                <Col  >
+                                                    <UsersJoined {...e} />
+                                                </Col>
+                                            </Col>
+                                        )
+
+                                    })
+
+                                    :
+                                    <Loader />
+                            }
+
                             <Link to={`/events/edit/${event_id}`}>
                                 <div className="d-grid">
                                     <Button variant="warning" size="sm" as="div">Edit</Button>
@@ -88,7 +107,7 @@ const EventDetails = ({ loadEvents }) => {
                 </>
             }
 
-        </Container>
+        </Container >
 
     )
 }
