@@ -8,7 +8,7 @@ import Map from "../../../components/Maps/Maps"
 import Chat from '../../../components/Chat/Chat'
 
 
-const EventDetails = () => {
+const EventDetails = ({ loadEvents }) => {
 
     const [event, setEvent] = useState({})
 
@@ -25,41 +25,67 @@ const EventDetails = () => {
 
     }, [])
 
+    const handleDelete = () => {
+
+        eventService
+            .deleteEvent(event_id)
+            .then(() => loadEvents())
+            .catch(err => console.error(err))
+    }
+
+    const handleJoin = () => {
+
+        eventService
+            .joinEvent(event_id)
+            .then(() => loadEvents())
+            .catch(err => console.error(err))
+    }
 
     return (
-        <>
-            <Container>
-                {
-                    <>
-                        <Map event={event} />
-                        <h1>Details of  {!event.origin ? <Loader /> : event.origin.address}  to {!event.destination ? <Loader /> : event.destination.address}  </h1>
-                        <hr />
+        <Container>
+            {
+                <>
+                    <Map event={event} />
+                    <h1>Details of  {!event.origin ? <Loader /> : event.origin.address}  to {!event.destination ? <Loader /> : event.destination.address}  </h1>
+                    <hr />
 
-                        <Row>
-                            {console.log(event.origin?.address, 'yuhuuuu')}
-                            <Col md={{ span: 6 }}>
-                                <h3>Description of the route:</h3>
-                                <p>{event.description}</p>
-                                <ul>
-                                    <li>Date: {event.date}</li>
-                                    <li>Maximum of number of cyclists: {event.numberOfCyclists}</li>
-                                </ul>
+                    <Row>
+                        <Col md={{ span: 6 }}>
+                            <h3>Description of the route:</h3>
+                            <p>{event.description}</p>
+                            <ul>
+                                <li>Date: {event.date}</li>
+                                <li>Maximum of number of cyclists: {event.numberOfCyclists}</li>
+                            </ul>
 
-                                <hr />
+                            <hr />
 
-                                <h4>Cyclists who has joined in the event!</h4>
+                            <h4>Cyclists who has joined in the event!</h4>
+                            <Link to={`/events/edit/${event_id}`}>
+                                <div className="d-grid">
+                                    <Button variant="warning" size="sm" as="div">Edit</Button>
+                                </div>
+                            </Link>
+                            <Link to={`/events`}>
+                                <div className="d-grid">
+                                    <Button onClick={handleDelete} variant="danger" size="sm" as="div">Delete</Button>
+                                </div>
+                            </Link>
+                            <Link to={`/events/details/${event_id}`}>
+                                <div className="d-grid">
+                                    <Button onClick={handleJoin} variant="success" size="sm" as="div">Join Event</Button>
+                                </div>
+                            </Link>
+                            <Link to="/events">
+                                <Button as="div" variant="dark">Back to event list</Button>
+                            </Link>
+                        </Col>
+                    </Row>
+                    <Chat />
+                </>
+            }
 
-                                <Link to="/events">
-                                    <Button as="div" variant="dark">Back to event list</Button>
-                                </Link>
-                            </Col>
-                        </Row>
-                    </>
-                }
-
-            </Container>
-            {/* <Chat/> */}
-        </>
+        </Container>
 
     )
 }

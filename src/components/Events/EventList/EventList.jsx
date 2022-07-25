@@ -11,7 +11,6 @@ const EventList = () => {
 
     const [events, setEvents] = useState([])
     const [copyEvents, copySetEvents] = useState([])
-
     const [showModal, setShowModal] = useState(false)
 
 
@@ -23,7 +22,6 @@ const EventList = () => {
         else {
             const filteredEvents = copyEvents.filter(elm => elm.origin.address.startsWith(letter))
             copySetEvents(filteredEvents)
-            console.log('FILTRO', copyEvents)
 
         }
 
@@ -56,7 +54,7 @@ const EventList = () => {
                 events.length ?
                     <Row>
 
-                        <h1>List of events <span onClick={openModal}>+</span> </h1>
+                        <h1>List of events <span onClick={openModal}>+</span></h1>
                         <hr></hr>
                         <SearchBar filterEvent={filterEvent} />
                         {

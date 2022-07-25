@@ -43,8 +43,8 @@ const EventEditForm = () => {
     }
 
     const handleSubmit = e => {
-        e.preventDefault()
 
+        e.preventDefault()
         eventService
             .editEvent(event_id, eventData)
             .then(() => navigate('/events'))

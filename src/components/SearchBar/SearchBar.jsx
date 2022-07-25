@@ -7,13 +7,11 @@ function SearchBar({ filterEvent }) {
         setSearchBar(e.target.value)
         filterEvent(e.target.value)
     }
-    console.log('Que estoy escribiendo aqui', SearchBar)
 
     return (
         <>
             <h3>Search Events</h3>
             <input type="text" onChange={handleChange} />
-
         </>
     )
 }

@@ -1,44 +1,54 @@
-// import { useState } from "react"
-// import { Form, Container, Button, Col } from "react-bootstrap"
+import { createElement } from "react"
+import { useEffect, useState } from "react"
+import { Form, Container, Button, Col } from "react-bootstrap"
+import React from "react"
+
+const Chat = () => {
+
+    const [chatMessage, setChatMessage] = useState([])
+
+    // const handleInputChange = e => {
+    //     const { value, name } = e.target
+    //     setChatMessage({ ...chatMessage, [name]: value })
+    // }
+
+    const handleForm = e => {
+        e.preventDefault()
+        // const { chatMessage } = e.target
+        // setChatMessage(chatMessage)
+        const element = React.createElement(
+            'div',
+            { className: 'container' },
+            'Hello word'
+        );
+
+    }
+
+    // useEffect(() => {
+    //     setChatMessage()
+    // })
+
+    return (
+
+        <Container>
+            <Col md={{ offset: 4, span: 4 }}>
+                <Form >
+
+                    <Form.Group className="mb-3" controlId="bio">
+                        <Form.Label>Leve your message here!</Form.Label>
+                        <Form.Control as="textarea" type="text" name="message" />
+                    </Form.Group>
+
+                    <Button variant="dark" type="submit" onClick={handleForm}>
+                        Submit
+                    </Button>
+
+                </Form>
+            </Col>
+        </Container>
+
+    )
+}
 
 
-// const Chat = () => {
-
-//     // const [message, setMessage] = useState
-
-//     // const handleInputChange = e => {
-//     //     const { value, name } = e.target
-//     //     setMessage({ ...message, [name]: value })
-//     // }
-
-//     const handleForm = e => {
-//         e.preventDefault()
-//         const { message } = e.target
-
-//         console.log(message)
-//     }
-
-//     return (
-
-//         <Container>
-//             <Col md={{ offset: 6, span: 4 }}>
-//                 <Form >
-
-//                     <Form.Group className="mb-3" controlId="bio">
-//                         <Form.Label>Leve your message here!</Form.Label>
-//                         <Form.Control as="textarea" type="text" name="message" value={message} />
-//                     </Form.Group>
-
-//                     <Button variant="dark" type="submit" onClick={handleForm}>
-//                         Submit
-//                     </Button>
-
-//                 </Form>
-//             </Col>
-//         </Container>
-
-//     )
-// }
-
-
-// export default Chat
+export default Chat
