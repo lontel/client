@@ -14,13 +14,10 @@ const Chat = () => {
 
     const handleForm = e => {
         e.preventDefault()
+        
         // const { chatMessage } = e.target
         // setChatMessage(chatMessage)
-        const element = React.createElement(
-            'div',
-            { className: 'container' },
-            'Hello word'
-        );
+      
 
     }
 
