@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from 'react'
 import EventForm from '../EventForm/EventForm'
 import eventService from '../../../services/event.services'
 import SearchBar from '../../SearchBar/SearchBar'
+import './EventList.css'
 
 const EventList = () => {
 
@@ -61,7 +62,11 @@ const EventList = () => {
                         })
 
                         :
-                        <img src='' />
+                        <>
+                            <h1>Ohhhh no... no event was found</h1>
+                            <img src='./../../images/search.gif' className='searchImg' />
+                        </>
+
                     }
 
                     <Modal show={showModal} onHide={closeModal}>
