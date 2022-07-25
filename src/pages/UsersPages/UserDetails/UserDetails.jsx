@@ -19,12 +19,13 @@ const UserDetails = () => {
             .then(({ data }) => setUser(data))
             .catch(err => console.error(err))
     }, [])
-
+console.log(user, '///////////')
     return (
 
         <Container>
             {
-                user.lenght ?
+                user 
+                ?
 
                     <>
                         <h1>Details of  {user.username}</h1>

@@ -9,7 +9,7 @@ import EventListPage from '../pages/EventsPages/EventsPage/EventsPage'
 import EventDetails from '../pages/EventsPages/EventsDetails/EventsDetails'
 import EventEditForm from '../components/Events/EventEditForm/EventEditForm'
 import NewEventPage from '../pages/EventsPages/NewEventPage/NewEventPage'
-
+import PrivateRoute from './PrivateRoute'
 
 const AppRoutes = () => {
 
@@ -18,15 +18,29 @@ const AppRoutes = () => {
         <Routes>
 
             <Route path='/' element={<HomePage />} />
-            <Route path='/users' element={<UserListPage />} />
-            <Route path='/account/details/:account_id' element={<UserDetails />} />
-            <Route path='/account/edit/:user_id' element={<UserEdit />} />
+
+            <Route path="/users" element={<PrivateRoute />}>
+                <Route path="" element={<UserListPage />} />
+            </Route>
+            <Route path="/account/details/:account_id" element={<PrivateRoute />}>
+                <Route path="" element={<UserDetails />} />
+            </Route>
+            <Route path="/account/edit/:user_id" element={<PrivateRoute />}>
+                <Route path="" element={<UserEdit />} />
+            </Route>
             <Route path='/account/sign-up' element={<SignupPage />} />
             <Route path='/account/login' element={<LoginPage />} />
             <Route path='/events' element={<EventListPage />} />
-            <Route path='/events/details/:event_id' element={<EventDetails />} />
-            <Route path='/events/edit/:event_id' element={<EventEditForm />} />
-            <Route path='/events/create' element={<NewEventPage />} />
+
+            <Route path="/events/details/:event_id" element={<PrivateRoute />}>
+                <Route path="" element={<EventDetails />} />
+            </Route>
+            <Route path="/events/edit/:event_id" element={<PrivateRoute />}>
+                <Route path="" element={<EventEditForm />} />
+            </Route>
+            <Route path="/events/create" element={<PrivateRoute />}>
+                <Route path="" element={<NewEventPage />} />
+            </Route>
 
         </Routes>
     )
