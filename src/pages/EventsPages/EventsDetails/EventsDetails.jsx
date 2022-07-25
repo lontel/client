@@ -1,18 +1,19 @@
 import './EventsDetails.css'
 import eventService from "../../../services/event.services"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { Container, Row, Col, Button, Form } from "react-bootstrap"
 import { Link, useParams } from "react-router-dom"
 import Loader from "../../../components/Loader/Loader"
 import Map from "../../../components/Maps/Maps"
 import Chat from '../../../components/Chat/Chat'
 import UsersJoined from '../../../components/Users/UsersJoined/UsersJoined'
+import { AuthContext } from '../../../contexts/auth.context'
 
 
 const EventDetails = ({ loadEvents }) => {
 
     const [event, setEvent] = useState({})
-
+    const { user } = useContext(AuthContext)
     const { event_id } = useParams()
 
     useEffect(() => {
@@ -82,16 +83,22 @@ const EventDetails = ({ loadEvents }) => {
                                     <Loader />
                             }
 
+
+                            
                             <Link to={`/events/edit/${event_id}`}>
                                 <div className="d-grid">
-                                    <Button variant="warning" size="sm" as="div">Edit</Button>
+                                    {user?.role === 'ADMIN' && <Button variant="warning" size="sm" as="div">Edit</Button>} 
                                 </div>
                             </Link>
                             <Link to={`/events`}>
                                 <div className="d-grid">
-                                    <Button onClick={handleDelete} variant="danger" size="sm" as="div">Delete</Button>
+                                    {user?.role === 'ADMIN' &&<Button onClick={handleDelete} variant="danger" size="sm" as="div">Delete</Button>}
                                 </div>
                             </Link>
+
+
+
+
                             <Link to={`/events/details/${event_id}`}>
                                 <div className="d-grid">
                                     <Button onClick={handleJoin} variant="success" size="sm" as="div">Join Event</Button>
@@ -100,6 +107,9 @@ const EventDetails = ({ loadEvents }) => {
                             <Link to="/events">
                                 <Button as="div" variant="dark">Back to event list</Button>
                             </Link>
+
+
+
                         </Col>
                     </Row>
                     <Chat />
