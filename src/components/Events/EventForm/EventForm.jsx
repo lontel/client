@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import eventService from "../../../services/event.services"
 import { useNavigate } from 'react-router-dom'
+import uploadService from "../../../services/upload.services"
 
 
 const EventForm = ({ closeModal, loadEvents }) => {
@@ -10,9 +11,12 @@ const EventForm = ({ closeModal, loadEvents }) => {
         origin: '',
         destination: '',
         description: '',
+        eventPic: '',
         numberOfCyclists: '',
         date: ''
     })
+
+    const [isLoading, setIsLoading] = useState(false)
 
     const navigate = useNavigate()
 
@@ -27,6 +31,22 @@ const EventForm = ({ closeModal, loadEvents }) => {
         eventService
             .saveEvent(eventData)
             .then(() => loadEvents())
+            .catch(err => console.error(err))
+    }
+
+    const handleFileInput = e => {
+
+        setIsLoading(true)
+
+        const formData = new FormData()
+        formData.append('imageData', e.target.files[0])
+
+        uploadService
+            .uploadimage(formData)
+            .then(({ data }) => {
+                setIsLoading(false)
+                setEventData({ ...eventData, eventPic: data.cloudinary_url })
+            })
             .catch(err => console.error(err))
     }
 
@@ -65,6 +85,11 @@ const EventForm = ({ closeModal, loadEvents }) => {
             <Form.Group className="mb-3" controlId="description">
                 <Form.Label>Description</Form.Label>
                 <Form.Control as="textarea" type="text" value={description} onChange={handleChange} name="description" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="imageUrl">
+                <Form.Label>Event Photos</Form.Label>
+                <Form.Control type="file" onChange={handleFileInput} name="eventPic" />
             </Form.Group>
 
             <div className="d-grid">

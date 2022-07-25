@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Map from '../../Maps/Maps'
 
 
-const EventCard = ({ origin, destination, _id }) => {
+const EventCard = ({ origin, destination, _id, eventPic, pictures }) => {
 
 
 
@@ -14,7 +14,7 @@ const EventCard = ({ origin, destination, _id }) => {
         <Card className="UserCard mb-4">
             <Card.Body>
 
-
+                <img className='event-pic' src={eventPic} />
                 <p>The event is from {origin.address} to {destination.address} </p>
                 <Link to={`/events/details/${_id}`}>
                     {/* //aqui tenemos que poner la ruta con el zoom alejado */}
