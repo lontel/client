@@ -1,3 +1,4 @@
+import './EventCard.css'
 import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import eventService from '../../../services/event.services'
@@ -39,6 +40,7 @@ const EventCard = ({ origin, destination, _id, loadEvents }) => {
                         <Button variant="warning" size="sm" as="div">Edit</Button>
                     </div>
                 </Link>
+
                 <Link to={`/events`}>
                     <div className="d-grid">
                         <Button onClick={handleDelete} variant="danger" size="sm" as="div">Delete</Button>
@@ -49,6 +51,7 @@ const EventCard = ({ origin, destination, _id, loadEvents }) => {
                         <Button onClick={handleJoin} variant="success" size="sm" as="div">Join Event</Button>
                     </div>
                 </Link>
+
 
             </Card.Body>
 

@@ -1,44 +1,44 @@
-import { useState } from "react"
-import { Form, Container, Button, Col } from "react-bootstrap"
+// import { useState } from "react"
+// import { Form, Container, Button, Col } from "react-bootstrap"
 
 
-const Chat = () => {
+// const Chat = () => {
 
-    // const [message, setMessage] = useState
+//     // const [message, setMessage] = useState
 
-    // const handleInputChange = e => {
-    //     const { value, name } = e.target
-    //     setMessage({ ...message, [name]: value })
-    // }
+//     // const handleInputChange = e => {
+//     //     const { value, name } = e.target
+//     //     setMessage({ ...message, [name]: value })
+//     // }
 
-    const handleForm = e => {
-        e.preventDefault()
-        const { message } = e.target
+//     const handleForm = e => {
+//         e.preventDefault()
+//         const { message } = e.target
 
-        console.log(message)
-    }
+//         console.log(message)
+//     }
 
-    return (
+//     return (
 
-        <Container>
-            <Col md={{ offset: 6, span: 4 }}>
-                <Form >
+//         <Container>
+//             <Col md={{ offset: 6, span: 4 }}>
+//                 <Form >
 
-                    <Form.Group className="mb-3" controlId="bio">
-                        <Form.Label>Leve your message here!</Form.Label>
-                        <Form.Control as="textarea" type="text" name="message" value={message} />
-                    </Form.Group>
+//                     <Form.Group className="mb-3" controlId="bio">
+//                         <Form.Label>Leve your message here!</Form.Label>
+//                         <Form.Control as="textarea" type="text" name="message" value={message} />
+//                     </Form.Group>
 
-                    <Button variant="dark" type="submit" onClick={handleForm}>
-                        Submit
-                    </Button>
+//                     <Button variant="dark" type="submit" onClick={handleForm}>
+//                         Submit
+//                     </Button>
 
-                </Form>
-            </Col>
-        </Container>
+//                 </Form>
+//             </Col>
+//         </Container>
 
-    )
-}
+//     )
+// }
 
 
-export default Chat
+// export default Chat

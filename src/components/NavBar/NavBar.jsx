@@ -17,7 +17,7 @@ const NavBar = () => {
 
     return (
 
-        <Navbar bg="dark" expand="md" variant="dark" className='mb-5'>
+        <Navbar className='NavBar' expand="md" variant="dark" >
             <Container>
                 <Link to="/">
                     <Navbar.Brand>Bike Connect!</Navbar.Brand>
@@ -51,9 +51,6 @@ const NavBar = () => {
                             <Nav.Link as="span">Users</Nav.Link>
                         </Link>
 
-                        <Link to="/events/details/:id">
-                            <Nav.Link as="span">Details Event</Nav.Link>
-                        </Link>
 
                     </Nav>
                 </Navbar.Collapse>

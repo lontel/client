@@ -27,38 +27,38 @@ const EventDetails = () => {
 
 
     return (
-<>
-        <Container>
-            {
-                <>
-                    <Map event={event} />
-                    <h1>Details of  {!event.origin ? <Loader /> : event.origin.address}  to {!event.destination ? <Loader /> : event.destination.address}  </h1>
-                    <hr />
+        <>
+            <Container>
+                {
+                    <>
+                        <Map event={event} />
+                        <h1>Details of  {!event.origin ? <Loader /> : event.origin.address}  to {!event.destination ? <Loader /> : event.destination.address}  </h1>
+                        <hr />
 
-                    <Row>
-                        {console.log(event.origin?.address, 'yuhuuuu')}
-                        <Col md={{ span: 6 }}>
-                            <h3>Description of the route:</h3>
-                            <p>{event.description}</p>
-                            <ul>
-                                <li>Date: {event.date}</li>
-                                <li>Maximum of number of cyclists: {event.numberOfCyclists}</li>
-                            </ul>
+                        <Row>
+                            {console.log(event.origin?.address, 'yuhuuuu')}
+                            <Col md={{ span: 6 }}>
+                                <h3>Description of the route:</h3>
+                                <p>{event.description}</p>
+                                <ul>
+                                    <li>Date: {event.date}</li>
+                                    <li>Maximum of number of cyclists: {event.numberOfCyclists}</li>
+                                </ul>
 
-                            <hr />
+                                <hr />
 
-                            <h4>Cyclists who has joined in the event!</h4>
+                                <h4>Cyclists who has joined in the event!</h4>
 
-                            <Link to="/events">
-                                <Button as="div" variant="dark">Back to event list</Button>
-                            </Link>
-                        </Col>
-                    </Row>
-                </>
-            }
+                                <Link to="/events">
+                                    <Button as="div" variant="dark">Back to event list</Button>
+                                </Link>
+                            </Col>
+                        </Row>
+                    </>
+                }
 
-        </Container>
-        <Chat/>
+            </Container>
+            {/* <Chat/> */}
         </>
 
     )

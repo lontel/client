@@ -34,7 +34,7 @@ const EventList = () => {
 
 
     useEffect(() => {
-        copySetEvents()
+        // copySetEvents()
         loadEvents()
     }, [])
 
