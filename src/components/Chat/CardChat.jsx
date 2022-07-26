@@ -1,33 +1,36 @@
 import commentService from "../../services/comment.services"
-import { useState, useEffect } from "react"
+import { Link, useNavigate, useParams } from "react-router-dom"
+import { Button } from "react-bootstrap"
+import { AuthContext } from "../../contexts/auth.context"
+import { useContext } from "react"
 
 
+const CardChat = ({ allMessages, loadMessages }) => {
 
+    const { user} = useContext(AuthContext)
+console.log(user, 'desde contexto auth')
 
-const CardChat = () => {
-
-    const [message, setMessage] = useState([])
-
-    useEffect(() => {
-        loadMessages()
-    }, [])
-
-    const loadMessages = () => {
+    const handleButton = (comment_id) => {
 
         commentService
-            .getComments()
-            .then(({ data }) => {
-                setMessage(data)
-            })
+            .deleteComment(comment_id)
+            .then(() => loadMessages() )
             .catch(err => console.log(err))
     }
 
     return (
-        message.map(elm => {
+        allMessages.map(elm => {
+            console.log(elm, 'desde el elelmeto iterrado')
+
             return (
-                <ul>
+                <ul key={elm._id}>
                     <li>
                         <p>{elm.message}</p>
+                        {
+                            elm?.owner === user._id 
+                             &&
+                            <Button onClick={() => handleButton(elm._id)} as="div" variant="danger">Delete comment</Button>                          
+                    }
                     </li>
                 </ul>
             )

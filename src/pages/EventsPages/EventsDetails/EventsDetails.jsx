@@ -108,10 +108,9 @@ const EventDetails = ({ loadEvents }) => {
                                 <Button as="div" variant="dark">Back to event list</Button>
                             </Link>
 
-
-
                         </Col>
                     </Row>
+
                     <Chat />
 
                 </>

@@ -3,11 +3,19 @@ import { Form, Container, Button, Col } from "react-bootstrap"
 import React from "react"
 import commentService from "../../services/comment.services"
 import CardChat from "./CardChat"
-
+import { useParams } from "react-router-dom"
 
 const Chat = () => {
 
+    const [allMessages, setAllMessages] = useState([])
     const [chatMessage, setChatMessage] = useState({ message: '' })
+
+    const { event_id: event } = useParams()
+
+
+    useEffect(() => {
+        loadMessages()
+    }, [])
 
     const handleInputChange = e => {
         const { value, name } = e.target
@@ -17,24 +25,40 @@ const Chat = () => {
     const handleForm = e => {
         e.preventDefault()
 
+        const { message } = chatMessage
+        
+
         commentService
-            .saveComment(chatMessage)
+            .saveComment({ message, event })
             .then(({ data }) => {
                 console.log(data, 'que hay en este data')
                 setChatMessage(data)
+                loadMessages()
             })
             .catch(err => console.log(err))
 
+    }
+
+ 
+    const loadMessages = () => {
+
+        commentService
+            .getComments()
+            .then(({ data }) => {
+                setAllMessages(data)
+            })
+            .catch(err => console.log(err))
     }
 
 
 
     const { message } = chatMessage
 
+
     return (
         <>
             <div>
-                <CardChat state={setChatMessage} />
+                <CardChat allMessages={allMessages} loadMessages={loadMessages} />
             </div>
             <Container>
 
@@ -46,9 +70,7 @@ const Chat = () => {
                             <Form.Control as="textarea" type="text" name="message" value={message} onChange={handleInputChange} />
                         </Form.Group>
 
-                        <Button variant="dark" type="submit" >
-                            Submit
-                        </Button>
+                        <Button variant="dark" type="submit" > Submit </Button>
 
                     </Form>
                 </Col>
