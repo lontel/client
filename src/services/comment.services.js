@@ -24,21 +24,21 @@ class CommentService {
         return this.api.get(`/getAllComments/${event_id}`)
     }
 
-    getOneComment(coment_id) {
+    getOneComment(comment_id) {
 
-        return this.api.get(`/getOneComment/${coment_id}`)
+        return this.api.get(`/getOneComment/${comment_id}`)
     }
 
     saveComment(commentData) {
         return this.api.post('/saveComment', commentData)
     }
 
-    editComment(coment_id, commentData) {
-        return this.api.put(`/updateComment/${coment_id}`, commentData)
+    editComment(comment_id, commentData) {
+        return this.api.put(`/updateComment/${comment_id}`, commentData)
     }
 
-    deleteComment(coment_id) {
-        return this.api.delete(`/deleteComment/${coment_id}`)
+    deleteComment(comment_id) {
+        return this.api.delete(`/deleteComment/${comment_id}`) 
     }
 
 }
