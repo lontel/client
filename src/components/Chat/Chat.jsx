@@ -43,7 +43,7 @@ const Chat = () => {
     const loadMessages = () => {
 
         commentService
-            .getComments()
+            .getComments(event)
             .then(({ data }) => {
                 setAllMessages(data)
             })
