@@ -1,6 +1,6 @@
 import './NavBar.css'
 import { Nav, Navbar, Container } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../../contexts/auth.context'
 import { MessageContext } from '../../contexts/userMessage.context'
@@ -14,7 +14,8 @@ const NavBar = () => {
         setShowMessage({ show: true, title: 'Good bye!', text: 'Your session has been succesfully closed' })
         logoutUser()
     }
-
+    const { user_id } = useParams()
+    // console.log('------', user._id)
     return (
 
         <Navbar className='NavBar' expand="md" variant="dark" >
@@ -30,6 +31,9 @@ const NavBar = () => {
                             <>
                                 <Link to="/account/login">
                                     <Nav.Link as="span" onClick={logout} >Logout</Nav.Link>
+                                </Link>
+                                <Link to={`/account/myprofile/${user._id}`}>
+                                    <Nav.Link as="span" >My Profile</Nav.Link>
                                 </Link>
                             </>
                             :

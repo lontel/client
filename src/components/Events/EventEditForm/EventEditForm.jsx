@@ -86,7 +86,7 @@ const EventEditForm = () => {
                             <Col>
                                 <Form.Group className="mb-3" controlId="startTime">
                                     <Form.Label>Start time</Form.Label>
-                                    <Form.Control type="text" value={startTime} onChange={handleChange} name="startTime" />
+                                    <Form.Control type="time" value={startTime} onChange={handleChange} name="startTime" />
                                 </Form.Group>
                             </Col>
                         </Row>

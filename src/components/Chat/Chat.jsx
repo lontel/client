@@ -32,9 +32,9 @@ const Chat = () => {
         commentService
             .saveComment({ message, event })
             .then(({ data }) => {
-                console.log(data, 'que hay en este data???')
                 setChatMessage(data)
                 loadMessages()
+                message.value = ''
             })
             .catch(err => console.log(err))
 

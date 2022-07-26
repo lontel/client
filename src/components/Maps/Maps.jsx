@@ -23,6 +23,8 @@ function Map({ event }) {
 
     if (!isLoaded) {
         return <div />
+    } else {
+        calculateRoute()
     }
 
     async function calculateRoute() {
@@ -43,13 +45,13 @@ function Map({ event }) {
         setDuration(results.routes[0].legs[0].duration.text)
     }
 
-    function clearRoute() {
-        setDirectionsResponse(null)
-        setDistance('')
-        setDuration('')
-        originRef.current.value = ''
-        destiantionRef.current.value = ''
-    }
+    // function clearRoute() {
+    //     setDirectionsResponse(null)
+    //     setDistance('')
+    //     setDuration('')
+    //     originRef.current.value = ''
+    //     destiantionRef.current.value = ''
+    // }
 
     return (
         <Flex
@@ -103,17 +105,6 @@ function Map({ event }) {
                             />
                         </Autocomplete>
                     </Box>
-
-                    <ButtonGroup>
-                        <Link colorScheme='pink' type='submit' onClick={calculateRoute()}>
-
-                        </Link>
-                        <Link
-                            aria-label='center back'
-
-                            onClick={clearRoute}
-                        />
-                    </ButtonGroup>
                 </HStack>
 
                 <HStack className='route-info'  >

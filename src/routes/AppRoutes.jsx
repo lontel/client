@@ -12,7 +12,7 @@ import NewEventPage from '../pages/EventsPages/NewEventPage/NewEventPage'
 import AboutUs from '../pages/AboutUs/AboutUs'
 import MyProfile from '../pages/UsersPages/MyProfile/MyProfile'
 import PrivateRoute from './PrivateRoute'
-
+import MyProfilePage from './../pages/MyProfilePage/MyProfilePage'
 
 const AppRoutes = () => {
 
@@ -39,7 +39,9 @@ const AppRoutes = () => {
             <Route path="/account/edit/:user_id" element={<PrivateRoute />}>
                 <Route path="" element={<UserEdit />} />
             </Route>
-
+            <Route path='/account/myprofile/:account_id' element={<PrivateRoute />}>
+                <Route path="" element={<MyProfilePage />} />
+            </Route>
             <Route path="/events/details/:event_id" element={<PrivateRoute />}>
                 <Route path="" element={<EventDetails />} />
             </Route>
@@ -55,4 +57,3 @@ const AppRoutes = () => {
     )
 }
 export default AppRoutes
-

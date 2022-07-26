@@ -101,13 +101,14 @@ const EventForm = ({ closeModal, loadEvents }) => {
                 <Col>
                     <Form.Group className="mb-3" controlId="startTime">
                         <Form.Label>Start Time</Form.Label>
-                        <Form.Control type="text" value={startTime} onChange={handleChange} name="startTime" />
+                        <Form.Control type="time" value={startTime} onChange={handleChange} name="startTime" />
                     </Form.Group>
                 </Col>
             </Row>
 
             <Form.Group className="mb-3" controlId="imageUrl">
                 <Form.Label>Event Photos</Form.Label>
+<<<<<<< HEAD
                 <Form.Control type="file" onChange={handleFileInput} name="eventPic" multiple />
             </Form.Group>
 
@@ -116,6 +117,15 @@ const EventForm = ({ closeModal, loadEvents }) => {
                 <Form.Control as="textarea" type="text" value={description} onChange={handleChange} name="description" />
             </Form.Group>
 
+=======
+                <Form.Control type="file" onChange={handleFileInput} name="eventPic" />
+            </Form.Group>
+>>>>>>> 14c42c47df5080969629e4bd398204ed7a25e811
+
+            <Form.Group className="mb-3" controlId="description">
+                <Form.Label>Description</Form.Label>
+                <Form.Control as="textarea" type="text" value={description} onChange={handleChange} name="description" />
+            </Form.Group>
 
             <div className="d-grid">
                 <Button variant="dark" onClick={closeModal} type="submit">Create new event</Button>
