@@ -43,7 +43,6 @@ const UserEditForm = () => {
         userService
             .editUser(user_id, editData)
             .then((data) => {
-                console.log(data, 'desde handle edit')
                 navigate('/users')
             })
             .catch(err => console.log(err))

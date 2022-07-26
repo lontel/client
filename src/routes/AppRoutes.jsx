@@ -11,7 +11,7 @@ import EventEditForm from '../components/Events/EventEditForm/EventEditForm'
 import NewEventPage from '../pages/EventsPages/NewEventPage/NewEventPage'
 import AboutUs from '../pages/AboutUs/AboutUs'
 import PrivateRoute from './PrivateRoute'
-
+import MyProfilePage from './../pages/MyProfilePage/MyProfilePage'
 
 const AppRoutes = () => {
 
@@ -38,7 +38,9 @@ const AppRoutes = () => {
             <Route path="/account/edit/:user_id" element={<PrivateRoute />}>
                 <Route path="" element={<UserEdit />} />
             </Route>
-
+            <Route path='/account/myprofile/:account_id' element={<PrivateRoute />}>
+                <Route path="" element={<MyProfilePage />} />
+            </Route>
             <Route path="/events/details/:event_id" element={<PrivateRoute />}>
                 <Route path="" element={<EventDetails />} />
             </Route>
@@ -48,9 +50,7 @@ const AppRoutes = () => {
             <Route path="/events/create" element={<PrivateRoute />}>
                 <Route path="" element={<NewEventPage />} />
             </Route>
-
         </Routes>
     )
 }
 export default AppRoutes
-

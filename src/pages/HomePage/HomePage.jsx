@@ -25,28 +25,28 @@ const HomePage = () => {
                     <li>
                         <a href="#0">
                             About
-                            <span class="border border-top"></span>
-                            <span class="border border-right"></span>
-                            <span class="border border-bottom"></span>
-                            <span class="border border-left"></span>
+                            <span className="border border-top"></span>
+                            <span className="border border-right"></span>
+                            <span className="border border-bottom"></span>
+                            <span className="border border-left"></span>
                         </a>
                     </li>
                     <li>
                         <a href="#0">
                             Privacy Policy
-                            <span class="border border-top"></span>
-                            <span class="border border-right"></span>
-                            <span class="border border-bottom"></span>
-                            <span class="border border-left"></span>
+                            <span className="border border-top"></span>
+                            <span className="border border-right"></span>
+                            <span className="border border-bottom"></span>
+                            <span className="border border-left"></span>
                         </a>
                     </li>
                     <li>
                         <a href="#0">
                             Client
-                            <span class="border border-top"></span>
-                            <span class="border border-right"></span>
-                            <span class="border border-bottom"></span>
-                            <span class="border border-left"></span>
+                            <span className="border border-top"></span>
+                            <span className="border border-right"></span>
+                            <span className="border border-bottom"></span>
+                            <span className="border border-left"></span>
                         </a>
                     </li>
 

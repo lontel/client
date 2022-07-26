@@ -19,6 +19,9 @@ class UserService {
         })
     }
 
+    getProfile(account_id) {
+        return this.api.get(`/myprofile/${account_id}`)
+    }
 
     getUsers() {
         return this.api.get('/getAllAccounts')

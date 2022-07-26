@@ -14,7 +14,6 @@ const LoginForm = () => {
         password: ''
     })
 
-
     const { setShowMessage } = useContext(MessageContext)
     const { storeToken, authenticateUser } = useContext(AuthContext)
     const navigate = useNavigate()
@@ -31,12 +30,10 @@ const LoginForm = () => {
         authService
             .login(loginData)
             .then(({ data }) => {
-                console.log(loginData)
                 storeToken(data.authToken)
                 authenticateUser()
                 setShowMessage({ show: true, title: `Welcome! ${loginData.email}`, text: 'You have succesfully login!' })
-                navigate('/events')
-
+                navigate('/')
             })
             .catch(err => console.log(err))
     }
