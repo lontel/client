@@ -5,6 +5,7 @@ import commentService from "../../services/comment.services"
 import CardChat from "./CardChat"
 import { useParams } from "react-router-dom"
 
+
 const Chat = () => {
 
     const [allMessages, setAllMessages] = useState([])
@@ -73,7 +74,9 @@ const Chat = () => {
                         <Button variant="dark" type="submit" > Submit </Button>
 
                     </Form>
+
                 </Col>
+
             </Container>
 
 

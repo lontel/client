@@ -36,25 +36,49 @@ const EventForm = ({ closeModal, loadEvents }) => {
 
     const handleFileInput = e => {
 
-        setIsLoading(true)
-
         const formData = new FormData()
-        formData.append('imageData', e.target.files[0])
+
+        for (let i = 0; i < e.target.files.length; i++) {
+            formData.append('imagesData', e.target.files[i])
+        }
 
         uploadService
-            .uploadimage(formData)
+            .uploadimages(formData)
             .then(({ data }) => {
-                setIsLoading(false)
-                setEventData({ ...eventData, eventPic: data.cloudinary_url })
+                console.log(data)
+                setEventData({ ...eventData, eventPic: data.cloudinary_urls })
             })
-            .catch(err => console.error(err))
+            .catch(err => console.log(err))
+
+        // setIsLoading(true)
+
+        // const formData = new FormData()
+
+        // const files = e.target.files
+
+        // console.log(files)
+
+        // if (files.length != 0) {
+        //     for (const single_file of files) {
+        //         formData.append('imageData', single_file)
+        //     }
+        // }
+
+
+        // uploadService
+        //     .uploadimages(formData)
+        //     .then(({ data }) => {
+        //         setIsLoading(false)
+        //         setEventData({ ...eventData, eventPic: data.cloudinary_url })
+        //     })
+        //     .catch(err => console.error(err))
     }
 
     const { origin, destination, description, startTime, date } = eventData
 
     return (
 
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} encType="multipart/form-data">
 
             <Form.Group className="mb-3" controlId="origin">
                 <Form.Label>Origin</Form.Label>
@@ -82,15 +106,16 @@ const EventForm = ({ closeModal, loadEvents }) => {
                 </Col>
             </Row>
 
+            <Form.Group className="mb-3" controlId="imageUrl">
+                <Form.Label>Event Photos</Form.Label>
+                <Form.Control type="file" onChange={handleFileInput} name="eventPic" multiple />
+            </Form.Group>
+
             <Form.Group className="mb-3" controlId="description">
                 <Form.Label>Description</Form.Label>
                 <Form.Control as="textarea" type="text" value={description} onChange={handleChange} name="description" />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="imageUrl">
-                <Form.Label>Event Photos</Form.Label>
-                <Form.Control type="file" onChange={handleFileInput} name="eventPic" />
-            </Form.Group>
 
             <div className="d-grid">
                 <Button variant="dark" onClick={closeModal} type="submit">Create new event</Button>

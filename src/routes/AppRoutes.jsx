@@ -10,6 +10,7 @@ import EventDetails from '../pages/EventsPages/EventsDetails/EventsDetails'
 import EventEditForm from '../components/Events/EventEditForm/EventEditForm'
 import NewEventPage from '../pages/EventsPages/NewEventPage/NewEventPage'
 import AboutUs from '../pages/AboutUs/AboutUs'
+import MyProfile from '../pages/UsersPages/MyProfile/MyProfile'
 import PrivateRoute from './PrivateRoute'
 
 
@@ -48,6 +49,7 @@ const AppRoutes = () => {
             <Route path="/events/create" element={<PrivateRoute />}>
                 <Route path="" element={<NewEventPage />} />
             </Route>
+
 
         </Routes>
     )
