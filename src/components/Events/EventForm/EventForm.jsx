@@ -77,19 +77,19 @@ const EventForm = ({ closeModal, loadEvents }) => {
                 <Col>
                     <Form.Group className="mb-3" controlId="startTime">
                         <Form.Label>Start Time</Form.Label>
-                        <Form.Control type="text" value={startTime} onChange={handleChange} name="startTime" />
+                        <Form.Control type="time" value={startTime} onChange={handleChange} name="startTime" />
                     </Form.Group>
                 </Col>
             </Row>
 
-            <Form.Group className="mb-3" controlId="description">
-                <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" type="text" value={description} onChange={handleChange} name="description" />
-            </Form.Group>
-
             <Form.Group className="mb-3" controlId="imageUrl">
                 <Form.Label>Event Photos</Form.Label>
                 <Form.Control type="file" onChange={handleFileInput} name="eventPic" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="description">
+                <Form.Label>Description</Form.Label>
+                <Form.Control as="textarea" type="text" value={description} onChange={handleChange} name="description" />
             </Form.Group>
 
             <div className="d-grid">
