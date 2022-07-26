@@ -1,10 +1,8 @@
 import commentService from "../../services/comment.services"
-import userService from "../../services/user.services"
 import { AuthContext } from "../../contexts/auth.context"
 import { useParams } from "react-router-dom"
 import { useState, useEffect, useContext } from "react"
 import { Button } from "react-bootstrap"
-import { Link, useNavigate, useParams } from "react-router-dom"
 import LikeButton from "./LikeButton"
 
 
