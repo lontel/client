@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Form, Container, Button, Col } from "react-bootstrap"
 import React from "react"
 import commentService from "../../services/comment.services"
@@ -20,14 +20,12 @@ const Chat = () => {
         commentService
             .saveComment(chatMessage)
             .then(({ data }) => {
-                console.log(data, 'que hay en este data')
+                console.log(data, 'que hay en este data???')
                 setChatMessage(data)
             })
             .catch(err => console.log(err))
 
     }
-
-
 
     const { message } = chatMessage
 

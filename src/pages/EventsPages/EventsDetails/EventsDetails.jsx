@@ -15,6 +15,7 @@ const EventDetails = ({ loadEvents }) => {
     const [event, setEvent] = useState({})
     const { user } = useContext(AuthContext)
     const { event_id } = useParams()
+    console.log(event_id, 'EOEOEO WOWOW')
 
     useEffect(() => {
 
@@ -58,7 +59,7 @@ const EventDetails = ({ loadEvents }) => {
                             <p>{event.description}</p>
                             <ul>
                                 <li>Date: {event.date}</li>
-                                <li>Maximum of number of cyclists: {event.numberOfCyclists}</li>
+                                <li>Start time of the event: {event.startTime}</li>
                             </ul>
 
                             <hr />
@@ -83,35 +84,32 @@ const EventDetails = ({ loadEvents }) => {
                                     <Loader />
                             }
 
-
-                            
                             <Link to={`/events/edit/${event_id}`}>
                                 <div className="d-grid">
-                                    {user?.role === 'ADMIN' && <Button variant="warning" size="sm" as="div">Edit</Button>} 
+                                    {user?.role === 'ADMIN' && <Button variant="warning" size="sm" as="div">Edit</Button>}
                                 </div>
                             </Link>
+
                             <Link to={`/events`}>
                                 <div className="d-grid">
-                                    {user?.role === 'ADMIN' &&<Button onClick={handleDelete} variant="danger" size="sm" as="div">Delete</Button>}
+                                    {user?.role === 'ADMIN' && <Button onClick={handleDelete} variant="danger" size="sm" as="div">Delete</Button>}
                                 </div>
                             </Link>
-
-
-
 
                             <Link to={`/events/details/${event_id}`}>
                                 <div className="d-grid">
                                     <Button onClick={handleJoin} variant="success" size="sm" as="div">Join Event</Button>
                                 </div>
                             </Link>
+
                             <Link to="/events">
                                 <Button as="div" variant="dark">Back to event list</Button>
                             </Link>
 
-
-
                         </Col>
+
                     </Row>
+
                     <Chat />
 
                 </>

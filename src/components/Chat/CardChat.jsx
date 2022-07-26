@@ -1,10 +1,10 @@
 import commentService from "../../services/comment.services"
 import { useState, useEffect } from "react"
-
-
-
+import { useParams } from "react-router-dom"
 
 const CardChat = () => {
+
+    const { event_id } = useParams()
 
     const [message, setMessage] = useState([])
 
@@ -15,7 +15,7 @@ const CardChat = () => {
     const loadMessages = () => {
 
         commentService
-            .getComments()
+            .getComments(event_id)
             .then(({ data }) => {
                 setMessage(data)
             })

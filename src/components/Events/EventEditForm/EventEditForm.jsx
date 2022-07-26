@@ -13,7 +13,7 @@ const EventEditForm = () => {
         origin: '',
         destination: '',
         description: '',
-        numberOfCyclists: '',
+        startTime: '',
         date: ''
     })
 
@@ -25,7 +25,7 @@ const EventEditForm = () => {
                     origin: data.origin.address,
                     destination: data.destination.address,
                     description: data.description,
-                    numberOfCyclists: data.numberOfCyclists,
+                    startTime: data.startTime,
                     date: data.date
                 })
             })
@@ -53,7 +53,7 @@ const EventEditForm = () => {
     }
 
 
-    const { origin, destination, description, numberOfCyclists, date } = eventData
+    const { origin, destination, description, startTime, date } = eventData
 
 
     return (
@@ -84,9 +84,9 @@ const EventEditForm = () => {
                             </Col>
 
                             <Col>
-                                <Form.Group className="mb-3" controlId="numberOfCyclists">
-                                    <Form.Label>NumberOfCyclists</Form.Label>
-                                    <Form.Control type="number" value={numberOfCyclists} onChange={handleChange} name="numberOfCyclists" />
+                                <Form.Group className="mb-3" controlId="startTime">
+                                    <Form.Label>Start time</Form.Label>
+                                    <Form.Control type="text" value={startTime} onChange={handleChange} name="startTime" />
                                 </Form.Group>
                             </Col>
                         </Row>

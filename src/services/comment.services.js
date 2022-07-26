@@ -20,8 +20,8 @@ class CommentService {
     }
 
 
-    getComments() {
-        return this.api.get('/getAllComments')
+    getComments(event_id) {
+        return this.api.get(`/getAllComments/${event_id}`)
     }
 
     getOneComment(coment_id) {

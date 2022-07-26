@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
 
-const HomePage = () => {
 
+const HomePage = () => {
 
 
 
@@ -16,7 +16,10 @@ const HomePage = () => {
                 <h1>Bike Connect</h1>
                 <p>The social network of cyclists</p>
 
+
             </div>
+
+
             <footer>
                 <ul className="menu">
                     <li>

@@ -12,7 +12,7 @@ const EventForm = ({ closeModal, loadEvents }) => {
         destination: '',
         description: '',
         eventPic: '',
-        numberOfCyclists: '',
+        startTime: '',
         date: ''
     })
 
@@ -50,7 +50,7 @@ const EventForm = ({ closeModal, loadEvents }) => {
             .catch(err => console.error(err))
     }
 
-    const { origin, destination, description, numberOfCyclists, date } = eventData
+    const { origin, destination, description, startTime, date } = eventData
 
     return (
 
@@ -75,9 +75,9 @@ const EventForm = ({ closeModal, loadEvents }) => {
                 </Col>
 
                 <Col>
-                    <Form.Group className="mb-3" controlId="numberOfCyclists">
-                        <Form.Label>NumberOfCyclists</Form.Label>
-                        <Form.Control type="number" value={numberOfCyclists} onChange={handleChange} name="numberOfCyclists" />
+                    <Form.Group className="mb-3" controlId="startTime">
+                        <Form.Label>Start Time</Form.Label>
+                        <Form.Control type="text" value={startTime} onChange={handleChange} name="startTime" />
                     </Form.Group>
                 </Col>
             </Row>
