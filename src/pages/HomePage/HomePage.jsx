@@ -1,12 +1,7 @@
 import './HomePage.css'
-import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
-
 
 
 const HomePage = () => {
-
-
 
     return (
 

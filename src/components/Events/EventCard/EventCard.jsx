@@ -1,5 +1,5 @@
 import './EventCard.css'
-import { Card, Button } from 'react-bootstrap'
+import { Card, Button, Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
@@ -9,12 +9,11 @@ const EventCard = ({ origin, destination, _id, eventPic }) => {
 
     return (
 
-
         <Card className="UserCard mb-4">
             <Card.Body>
                 <Carousel>
                     <Carousel.Item>
-                        <img
+                        <Image
                             className="d-block w-100"
                             src={eventPic[0]}
                             alt="First slide"
@@ -25,7 +24,7 @@ const EventCard = ({ origin, destination, _id, eventPic }) => {
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img
+                        <Image
                             className="d-block w-100"
                             src={eventPic[1]}
                             alt="Second slide"

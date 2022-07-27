@@ -65,23 +65,20 @@ const EventDetails = ({ loadEvents }) => {
                             <hr />
 
                             <h4>Cyclists who has joined in the event!</h4>
-                            {
-                                event.cyclists ?
-
-
-                                    event.cyclists.map(e => {
-                                        return (
-                                            <Col md={3} >
-                                                <Col  >
-                                                    <UsersJoined {...e} />
-                                                </Col>
+                            {event.cyclists
+                                ?
+                                event.cyclists.map(e => {
+                                    console.log('//////', e)
+                                    return (
+                                        <Col md={3} >
+                                            <Col  >
+                                                <UsersJoined {...e} />
                                             </Col>
-                                        )
-
-                                    })
-
-                                    :
-                                    <Loader />
+                                        </Col>
+                                    )
+                                })
+                                :
+                                <Loader />
                             }
 
                             <Link to={`/events/edit/${event_id}`}>
@@ -99,7 +96,7 @@ const EventDetails = ({ loadEvents }) => {
                                 </div>
                             </Link>
 
-                            <Link to={`/events/details/${event_id}`}>
+                            <Link to={`/event/${event_id}/join`}>
                                 <div className="d-grid">
                                     <Button onClick={handleJoin} variant="success" size="sm" as="div">Join Event</Button>
                                 </div>
@@ -107,6 +104,10 @@ const EventDetails = ({ loadEvents }) => {
 
                             <Link to="/events">
                                 <Button as="div" variant="dark">Back to event list</Button>
+                            </Link>
+
+                            <Link to={`/events/chat/${event_id}`}>
+                                <Button as="div" variant="dark">Chat Event</Button>
                             </Link>
 
                         </Col>

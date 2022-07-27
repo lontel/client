@@ -1,5 +1,6 @@
+import './CardChat'
 import { useEffect, useState } from "react"
-import { Form, Container, Button, Col } from "react-bootstrap"
+import { Form, Container, Button, Col, Row } from "react-bootstrap"
 import commentService from "../../services/comment.services"
 import CardChat from "./CardChat"
 import { useParams } from "react-router-dom"
@@ -56,25 +57,38 @@ const Chat = () => {
 
     return (
         <>
-            <div>
-                <CardChat allMessages={allMessages} loadMessages={loadMessages} />
-            </div>
+
+
             <Container>
+                <CardChat allMessages={allMessages} loadMessages={loadMessages} />
 
-                <Col md={{ offset: 4, span: 4 }}>
-                    <Form onSubmit={handleForm} >
+                <Form onSubmit={handleForm} >
+                    <Row className="mb-3">
 
-                        <Form.Group className="mb-3" controlId="bio">
+                        <Form.Group as={Col} className='input-wrapper' controlId="bio">
                             <Form.Control type="text" placeholder="Leave your message here!" name="message" value={message} onChange={handleInputChange} />
                         </Form.Group>
+                        <Form.Group as={Col} className='input-wrapper' controlId="bio">
+                            {/* <Button type="submit" > Submit </Button> */}
+                            <button className='button-chat' type="submit">
+                                <div class="svg-wrapper-1">
+                                    <div class="svg-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span>Submit</span>
+                            </button>
+                        </Form.Group>
 
-                        <Button variant="dark" type="submit" > Submit </Button>
+                    </Row>
+                </Form>
 
-                    </Form>
-
-                </Col>
 
             </Container>
+
 
 
 

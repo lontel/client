@@ -1,10 +1,10 @@
-import { Row, Col, Modal } from 'react-bootstrap'
+import './EventList.css'
+import { Row, Col, Modal, Image } from 'react-bootstrap'
 import EventCard from '../EventCard/EventCard'
 import { useState, useEffect, useContext } from 'react'
 import EventForm from '../EventForm/EventForm'
 import eventService from '../../../services/event.services'
 import SearchBar from '../../SearchBar/SearchBar'
-import './EventList.css'
 
 const EventList = () => {
 
@@ -64,7 +64,7 @@ const EventList = () => {
                         :
                         <>
                             <h1>Ohhhh no... no event was found</h1>
-                            <img src='./../../images/search.gif' className='searchImg' />
+                            <Image src='./../../images/search.gif' className='searchImg' />
                         </>
 
                     }

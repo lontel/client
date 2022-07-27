@@ -55,9 +55,9 @@ const LoginForm = () => {
                 <Form.Control type="password" value={password} onChange={handleInputChange} name="password" />
             </Form.Group>
 
-            <div className="d-grid">
+            <Form.Group className="d-grid">
                 <Button variant="dark" type="submit">Login</Button>
-            </div>
+            </Form.Group>
 
         </Form>
     )

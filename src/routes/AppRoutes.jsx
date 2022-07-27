@@ -12,6 +12,7 @@ import NewEventPage from '../pages/EventsPages/NewEventPage/NewEventPage'
 import AboutUs from '../pages/AboutUs/AboutUs'
 import PrivateRoute from './PrivateRoute'
 import MyProfilePage from './../pages/MyProfilePage/MyProfilePage'
+import ChatPage from '../pages/EventsPages/ChatPage/ChatPage'
 
 const AppRoutes = () => {
 
@@ -50,6 +51,10 @@ const AppRoutes = () => {
             <Route path="/events/create" element={<PrivateRoute />}>
                 <Route path="" element={<NewEventPage />} />
             </Route>
+            <Route path="/events/chat/:event_id" element={<PrivateRoute />}>
+                <Route path="" element={<ChatPage />} />
+            </Route>
+
 
 
         </Routes>

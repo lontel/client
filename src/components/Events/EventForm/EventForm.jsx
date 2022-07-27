@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import eventService from "../../../services/event.services"
-import { useNavigate } from 'react-router-dom'
 import uploadService from "../../../services/upload.services"
 
 
@@ -16,9 +15,6 @@ const EventForm = ({ closeModal, loadEvents }) => {
         date: ''
     })
 
-    const [isLoading, setIsLoading] = useState(false)
-
-    const navigate = useNavigate()
 
     const handleChange = e => {
         const { value, name } = e.target
@@ -94,9 +90,9 @@ const EventForm = ({ closeModal, loadEvents }) => {
                 <Form.Control as="textarea" type="text" value={description} onChange={handleChange} name="description" />
             </Form.Group>
 
-            <div className="d-grid">
+            <Form.Group className="d-grid">
                 <Button variant="dark" onClick={closeModal} type="submit">Create new event</Button>
-            </div>
+            </Form.Group>
 
         </Form>
 
