@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { Form, Container, Button, Col } from "react-bootstrap"
-import React from "react"
 import commentService from "../../services/comment.services"
 import CardChat from "./CardChat"
 import { useParams } from "react-router-dom"
@@ -26,11 +25,11 @@ const Chat = () => {
     const handleForm = e => {
         e.preventDefault()
 
-        const { message } = chatMessage
+        const { message, likes } = chatMessage
 
 
         commentService
-            .saveComment({ message, event })
+            .saveComment({ message, event, likes })
             .then(({ data }) => {
                 setChatMessage(data)
                 loadMessages()

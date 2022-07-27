@@ -38,8 +38,14 @@ class CommentService {
     }
 
     deleteComment(comment_id) {
-        return this.api.delete(`/deleteComment/${comment_id}`) 
+        return this.api.delete(`/deleteComment/${comment_id}`)
     }
+
+    addLike(comment_id) {
+        return this.api.put(`/addLike/${comment_id}`)
+    }
+
+
 
 }
 
