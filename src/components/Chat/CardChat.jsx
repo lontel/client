@@ -1,6 +1,6 @@
 import commentService from "../../services/comment.services"
 import { AuthContext } from "../../contexts/auth.context"
-import { useParams } from "react-router-dom"
+// import { useParams } from "react-router-dom"
 import { useState, useEffect, useContext } from "react"
 import { Button } from "react-bootstrap"
 import LikeButton from "./LikeButton"
@@ -28,12 +28,12 @@ const CardChat = ({ allMessages, loadMessages }) => {
     }
     return (
         allMessages.map(elm => {
-
             return (
 
                 <ul key={elm._id}>
                     <li>
-                        <p>{elm.owner.username}</p>
+                        <p>@{elm.owner.username}</p>
+                        <img src={elm.owner.profilePic} alt="" />
                         <p>{elm.message}</p>
                         {
                             (elm.owner._id === user._id || user.role === 'ADMIN') ?

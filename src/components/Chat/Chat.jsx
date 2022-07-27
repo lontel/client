@@ -24,19 +24,19 @@ const Chat = () => {
     }
 
     const handleForm = e => {
+        
         e.preventDefault()
-
         const { message } = chatMessage
-
-
+        
         commentService
-            .saveComment({ message, event })
-            .then(({ data }) => {
-                setChatMessage(data)
-                loadMessages()
-            })
-            .catch(err => console.log(err))
-
+        .saveComment({ message, event })
+        .then(({ data }) => {
+            setChatMessage('')
+            loadMessages()
+            
+        })
+        .catch(err => console.log(err))
+        e.target.reset()
     }
 
 
@@ -66,8 +66,7 @@ const Chat = () => {
                     <Form onSubmit={handleForm} >
 
                         <Form.Group className="mb-3" controlId="bio">
-                            <Form.Label>Leave your message here!</Form.Label>
-                            <Form.Control as="textarea" type="text" name="message" value={message} onChange={handleInputChange} />
+                            <Form.Control type="text" placeholder="Leave your message here!" name="message" value={message} onChange={handleInputChange} />
                         </Form.Group>
 
                         <Button variant="dark" type="submit" > Submit </Button>
