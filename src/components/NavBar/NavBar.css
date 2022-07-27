@@ -1,6 +1,6 @@
 .NavBar {
-    background: rgb(3, 50, 28);
-    background: linear-gradient(90deg, rgba(3, 50, 28, 1) 0%, rgba(61, 175, 100, 1) 47%, rgba(3, 50, 28, 1) 100%);
+background: rgb(251, 176, 119);
+    background: radial-gradient(circle, rgba(251, 176, 119, 1) 10%, rgba(220, 130, 94, 1) 100%);
 }
 
 a {
@@ -36,5 +36,6 @@ a {
 }
 
 div.dropdown-menu.show {
-    background: #247941
+    background: rgb(251, 176, 119);
+        background: radial-gradient(circle, rgba(251, 176, 119, 1) 10%, rgba(220, 130, 94, 1) 100%);
 }
