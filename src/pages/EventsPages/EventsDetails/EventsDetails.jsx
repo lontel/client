@@ -68,9 +68,8 @@ const EventDetails = ({ loadEvents }) => {
                             {event.cyclists
                                 ?
                                 event.cyclists.map(e => {
-                                    console.log('//////', e)
                                     return (
-                                        <Col md={3} >
+                                        <Col md={3} key={e}>
                                             <Col  >
                                                 <UsersJoined {...e} />
                                             </Col>
