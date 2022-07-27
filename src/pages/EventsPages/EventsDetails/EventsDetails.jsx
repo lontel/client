@@ -21,7 +21,6 @@ const EventDetails = ({ loadEvents }) => {
         eventService
             .getOneEvent(event_id)
             .then(({ data }) => {
-                console.log(data)
                 setEvent(data)
             })
             .catch(err => console.error(err))

@@ -34,7 +34,6 @@ const Chat = () => {
             .then(({ data }) => {
                 setChatMessage(data)
                 loadMessages()
-                message.value = ''
             })
             .catch(err => console.log(err))
 
