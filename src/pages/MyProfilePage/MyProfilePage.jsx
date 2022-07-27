@@ -30,8 +30,8 @@ const MyProfilePage = () => {
             })
             .catch(err => console.log(err))
     }
-    console.log(role)
-    return ( role === 'ADMIN' ?
+
+    return (role === 'ADMIN' ?
         <>
             <h1>Welcome {username}</h1>
             <h2>{bio}</h2>
@@ -51,7 +51,7 @@ const MyProfilePage = () => {
             <h4>{role}</h4>
         </>
     )
-      
+
 }
 
 export default MyProfilePage

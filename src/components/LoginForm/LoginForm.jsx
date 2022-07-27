@@ -43,16 +43,17 @@ const LoginForm = () => {
 
     return (
 
-        <Form onSubmit={handleSubmit}>
-
+        <Form onSubmit={handleSubmit} id="container">
+            <h2>Log In</h2>
+            <p>It´s time to change your life</p>
             <Form.Group className="mb-3" controlId="email">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" value={email} onChange={handleInputChange} name="email" />
+                <Form.Control className="input" type="email" value={email} onChange={handleInputChange} name="email" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Contraseña</Form.Label>
-                <Form.Control type="password" value={password} onChange={handleInputChange} name="password" />
+                <Form.Label>Password</Form.Label>
+                <Form.Control className="input" type="password" value={password} onChange={handleInputChange} name="password" />
             </Form.Group>
 
             <Form.Group className="d-grid">
@@ -60,6 +61,10 @@ const LoginForm = () => {
             </Form.Group>
 
         </Form>
+
+
+
+
     )
 }
 

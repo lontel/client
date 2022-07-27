@@ -1,5 +1,6 @@
+import './SignupForm.css'
 import { useContext, useState } from "react"
-import { Form, Button } from "react-bootstrap"
+import { Form, Button, Container, Row, Col } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom'
 import authService from './../../services/auth.services'
 import uploadServices from "../../services/upload.services"
@@ -63,54 +64,63 @@ const SignupForm = () => {
 
     return (
 
+        <Container>
 
-        <Form onSubmit={handleSubmit} >
+            <Form onSubmit={handleSubmit} id="container-signup" className='width: 580'>
+                <h2>Sign Up</h2>
+                <p>It´s time to change your life</p>
+                <Form.Group className="mb-3" controlId="email">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control className="input" type="email" value={email} onChange={handleInputChange} name="email" />
+                </Form.Group>
+                <Row>
+                    <Col>
+                        <Form.Group className="mb-3" controlId="password">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control className="input" type="password" value={password} onChange={handleInputChange} name="password" />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group className="mb-3" controlId="username">
+                            <Form.Label>Username</Form.Label>
+                            <Form.Control className="input" type="text" value={username} onChange={handleInputChange} name="username" />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Form.Group className="mb-3" controlId="bio">
+                    <Form.Label>Description</Form.Label>
+                    <Form.Control className="input" as="textarea" type="text" value={bio} onChange={handleInputChange} name="bio" />
+                </Form.Group>
 
-            <Form.Group className="mb-3" controlId="email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" value={email} onChange={handleInputChange} name="email" />
-            </Form.Group>
+                <Row>
+                    <Col>
+                        <Form.Group className="mb-3" controlId="imageUrl">
+                            <Form.Label>Avatar</Form.Label>
+                            <Form.Control className="input" type="file" onChange={handleFileInput} name="profilePic" />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Select role</Form.Label>
+                            <Form.Select onChange={handleInputChange} name="role">
+                                <option className="input" value={'CYCLIST'}>Cyclist</option>
+                                <option className="input" value={'SPONSOR'}>Sponsor</option>
+                            </Form.Select>
+                        </Form.Group>
+                    </Col>
+                </Row>
 
-            <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" value={password} onChange={handleInputChange} name="password" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="username">
-                <Form.Label>Username</Form.Label>
-                <Form.Control type="text" value={username} onChange={handleInputChange} name="username" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="bio">
-                <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" type="text" value={bio} onChange={handleInputChange} name="bio" />
-            </Form.Group>
-
-
-            <Form.Group className="mb-3" controlId="imageUrl">
-                <Form.Label>Avatar</Form.Label>
-                <Form.Control type="file" onChange={handleFileInput} name="profilePic" />
-            </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Check type="checkbox" label="Send me special offers" />
+                </Form.Group>
 
 
-            <Form.Group className="mb-3">
-                <Form.Label>Select role</Form.Label>
-                <Form.Select onChange={handleInputChange} name="role">
-                    <option value={'CYCLIST'}>Cyclist</option>
-                    <option value={'SPONSOR'}>Sponsor</option>
-                </Form.Select>
-            </Form.Group>
+                <Form.Group className="d-grid">
+                    <Button variant="dark" type="submit">Sign Up</Button>
+                </Form.Group>
+            </Form>
 
-            <Form.Group className="mb-3">
-                <Form.Check type="checkbox" label="Send me special offers" />
-            </Form.Group>
-
-
-            <Form.Group className="d-grid">
-                <Button variant="dark" type="submit">Sign Up</Button>
-            </Form.Group>
-
-        </Form>
+        </Container>
     )
 }
 

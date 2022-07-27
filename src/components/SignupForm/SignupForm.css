@@ -1,17 +1,4 @@
-/* Login Form */
-
-@import url('https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web');
-
-body {
-    /* 	background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%); */
-    background: url(https://static.pexels.com/photos/5782/nature-flowers-vintage-plant.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    margin: 0;
-}
-
-
-#container {
+#container-signup {
     background-image: linear-gradient(to top, rgba(205, 156, 242, 0.40) 0%, rgba(246, 255, 255, 0.71) 100%);
     box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
     text-align: center;
@@ -21,8 +8,8 @@ body {
     height: 300px;
     width: 480px;
     padding: 1em;
-    margin-top: 10%;
-    padding-bottom: 500px;
+    padding-bottom: 650px;
+    margin-top: 82px;
 
     position: fixed;
     bottom: 0;
@@ -33,9 +20,9 @@ body {
 
 }
 
-#container h2 {
+#container-signup h2 {
     background: url(https://static.pexels.com/photos/5782/nature-flowers-vintage-plant.jpg);
-    /*   الكود المسؤال عن اضافة شفافية للنص */
+
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     /* 	background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%); */
@@ -51,7 +38,7 @@ body {
 
 }
 
-#container p {
+#container-signup p {
     font-family: 'Farsan', cursive;
     margin: 3px 0 1.5em 0;
     font-size: 1.3em;
@@ -65,7 +52,7 @@ body {
 
 
 
-#container button {
+#container-signup button {
     background-image: linear-gradient(to left, rgba(255, 146, 202, 0.75) 0%, rgba(145, 149, 251, 0.86) 100%);
     box-shadow: 0 9px 25px -5px #df91fb;
     font-family: 'Abel', sans-serif;
@@ -82,15 +69,17 @@ body {
 
 }
 
-#container button:hover {
+#container-signup button:hover {
     transform: translatey(2px);
 }
 
-#container button:active {
+#container-signup button:active {
     transform: translatey(5px);
 }
 
-/* input form */
+
+/*  Sign up form   */
+
 .input {
     line-height: 28px;
     border: 2px solid transparent;
