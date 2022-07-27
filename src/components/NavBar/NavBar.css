@@ -1,10 +1,13 @@
 .NavBar {
-    background-color: #74848f;
+    background: rgb(3, 50, 28);
+    background: linear-gradient(90deg, rgba(3, 50, 28, 1) 0%, rgba(61, 175, 100, 1) 47%, rgba(3, 50, 28, 1) 100%);
 }
 
 a {
     text-decoration: none;
 }
+
+/* navbar dropdown img */
 
 .img-profile-nav {
     width: 30px;
@@ -12,4 +15,26 @@ a {
     background-size: cover;
     border-radius: 50%;
     margin: 0 auto;
+}
+
+/* Logo */
+
+.iconPic {
+    width: 3%;
+}
+
+.title {
+    color: rgb(219, 211, 211)
+}
+
+#nav-dropdown {
+    color: rgb(219, 211, 211);
+}
+
+.nav-dropdown {
+    color: rgb(219, 211, 211);
+}
+
+div.dropdown-menu.show {
+    background: #247941
 }

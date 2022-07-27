@@ -8,15 +8,25 @@ const HomePage = () => {
         <>
 
             <div className='home-page'>
-                <h1>Bike Connect</h1>
-                <p>The social network of cyclists</p>
+                <button >Looking for adventure ?</button>
+            </div>
+            <div className='home-page2'>
+
+            </div>
+            <div className='home-page3'>
+
+            </div>
+            <div className='home-page4'>
+
             </div>
 
             <footer>
+
+                <span className='copy-right'>© All right reserved</span>
                 <ul className="menu">
                     <li>
-                        <a href="#0">
-                            About
+                        <a href="/about-us">
+                            About Us
                             <span className="border border-top"></span>
                             <span className="border border-right"></span>
                             <span className="border border-bottom"></span>
@@ -24,7 +34,7 @@ const HomePage = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="#0">
+                        <a href="/privacy">
                             Privacy Policy
                             <span className="border border-top"></span>
                             <span className="border border-right"></span>
@@ -33,8 +43,8 @@ const HomePage = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="#0">
-                            Client
+                        <a href="/contact">
+                            Contact
                             <span className="border border-top"></span>
                             <span className="border border-right"></span>
                             <span className="border border-bottom"></span>

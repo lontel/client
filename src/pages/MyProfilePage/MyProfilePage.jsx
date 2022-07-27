@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { useParams } from "react-router-dom"
-import UserEditForm from "../../components/Users/UserEditForm/UserEditForm"
+import { Button } from "react-bootstrap"
+import { useParams, Link } from "react-router-dom"
 import userService from "../../services/user.services"
 
 
@@ -30,15 +30,28 @@ const MyProfilePage = () => {
             })
             .catch(err => console.log(err))
     }
-    return (
+    console.log(role)
+    return ( role === 'ADMIN' ?
         <>
-        <h1>Welcome {username}</h1>
-        <h2>{bio}</h2>
-        <h3>{email}</h3>
-        <img src={profilePic} alt="" />
-        <h4>{role}</h4>
+            <h1>Welcome {username}</h1>
+            <h2>{bio}</h2>
+            <h3>{email}</h3>
+            <img src={profilePic} alt="" />
+            <h4>{role}</h4>
+            <Link to="/users">
+                <Button as="span" >Users</Button>
+            </Link>
+        </>
+        :
+        <>
+            <h1>Welcome {username}</h1>
+            <h2>{bio}</h2>
+            <h3>{email}</h3>
+            <img src={profilePic} alt="" />
+            <h4>{role}</h4>
         </>
     )
+      
 }
 
 export default MyProfilePage
