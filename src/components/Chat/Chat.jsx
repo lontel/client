@@ -45,7 +45,7 @@ const Chat = () => {
         commentService
             .getComments(event)
             .then(({ data }) => {
-                setAllMessages(data)
+                setAllMessages(data.reverse())
             })
             .catch(err => console.log(err))
     }

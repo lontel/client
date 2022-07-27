@@ -10,13 +10,11 @@ const NavBar = () => {
     const { user, logoutUser } = useContext(AuthContext)
     const { setShowMessage } = useContext(MessageContext)
 
-    console.log(user, 'MIERCOLES 27')
-
     const logout = () => {
         setShowMessage({ show: true, title: 'Good bye!', text: 'Your session has been succesfully closed' })
         logoutUser()
     }
-    const { user_id } = useParams()
+    // const { user_id } = useParams()
 
     return (
 
