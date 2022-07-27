@@ -31,12 +31,12 @@ const CardChat = ({ allMessages, loadMessages }) => {
 
     return (
         allMessages.map(elm => {
-
             return (
 
                 <ul key={elm._id}>
                     <li>
-                        <p>{elm.owner.username}</p>
+                        <p>@{elm.owner.username}</p>
+                        <img src={elm.owner.profilePic} alt="" />
                         <p>{elm.message}</p>
 
                         {

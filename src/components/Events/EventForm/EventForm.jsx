@@ -50,28 +50,6 @@ const EventForm = ({ closeModal, loadEvents }) => {
             })
             .catch(err => console.log(err))
 
-        // setIsLoading(true)
-
-        // const formData = new FormData()
-
-        // const files = e.target.files
-
-        // console.log(files)
-
-        // if (files.length != 0) {
-        //     for (const single_file of files) {
-        //         formData.append('imageData', single_file)
-        //     }
-        // }
-
-
-        // uploadService
-        //     .uploadimages(formData)
-        //     .then(({ data }) => {
-        //         setIsLoading(false)
-        //         setEventData({ ...eventData, eventPic: data.cloudinary_url })
-        //     })
-        //     .catch(err => console.error(err))
     }
 
     const { origin, destination, description, startTime, date } = eventData
@@ -110,12 +88,6 @@ const EventForm = ({ closeModal, loadEvents }) => {
                 <Form.Label>Event Photos</Form.Label>
                 <Form.Control type="file" onChange={handleFileInput} name="eventPic" multiple />
             </Form.Group>
-
-            <Form.Group className="mb-3" controlId="description">
-                <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" type="text" value={description} onChange={handleChange} name="description" />
-            </Form.Group>
-
 
             <Form.Group className="mb-3" controlId="description">
                 <Form.Label>Description</Form.Label>
