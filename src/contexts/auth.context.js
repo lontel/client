@@ -26,7 +26,6 @@ function AuthProviderWrapper(props) {
             .catch(err => logoutUser())
     }
 
-
     const logoutUser = () => {
         setUser(null)
         setIsLoading(false)

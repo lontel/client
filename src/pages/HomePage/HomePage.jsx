@@ -15,10 +15,7 @@ const HomePage = () => {
             <div className='home-page'>
                 <h1>Bike Connect</h1>
                 <p>The social network of cyclists</p>
-
-
             </div>
-
 
             <footer>
                 <ul className="menu">

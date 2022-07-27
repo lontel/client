@@ -5,3 +5,11 @@
 a {
     text-decoration: none;
 }
+
+.img-profile-nav {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+}
