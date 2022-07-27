@@ -5,8 +5,6 @@ import userService from "../../../services/user.services"
 
 const UsersJoined = ({ _id }) => {
 
-    console.log('_____', _id)
-
     const [currentUser, setCurrentUser] = useState()
 
     useEffect(() => {

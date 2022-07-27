@@ -22,8 +22,8 @@ const HomePage = () => {
 
             <footer>
 
-                <span className='copy-right'>© All right reserved</span>
                 <ul className="menu">
+                <span className='copy-right'>© All right reserved</span>
                     <li>
                         <a href="/about-us">
                             About Us
