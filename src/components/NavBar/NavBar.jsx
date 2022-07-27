@@ -21,18 +21,17 @@ const NavBar = () => {
         <Navbar className='NavBar' expand="md" variant="dark" >
             <Container>
                 <Link to="/">
-                    <Navbar.Brand>Bike Connect!</Navbar.Brand>
+                    <Navbar.Brand className='title'><img src='./../../../images/icon.png' className='iconPic' /> Bike Connect!</Navbar.Brand>
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-
                         {user ?
                             <>
                                 <NavDropdown title="Profile" id="nav-dropdown">
                                     <NavDropdown.Item eventKey="4.1">
                                         <Link to={`/account/myprofile/${user._id}`}>
-                                            <Nav.Link as="span" ><img className='img-profile-nav' src={user.profilePic}></img> My Profile  </Nav.Link>
+                                            <Nav.Link as="span" className="nav-dropdown dropdown-items"  ><img className='img-profile-nav' src={user.profilePic}></img> My Profile  </Nav.Link>
 
                                         </Link>
                                     </NavDropdown.Item>
@@ -57,11 +56,7 @@ const NavBar = () => {
                         }
 
                         <Link to="/events">
-                            <Nav.Link as="span">Events</Nav.Link>
-                        </Link>
-
-                        <Link to="/users">
-                            <Nav.Link as="span">Users</Nav.Link>
+                            <Nav.Link as="span" className="nav-dropdown">Events</Nav.Link>
                         </Link>
 
                     </Nav>

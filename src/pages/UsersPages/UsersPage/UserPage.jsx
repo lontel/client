@@ -9,7 +9,6 @@ const UserListPage = () => {
 
             <h1>Listado de usuarios</h1>
             <UserList />
-
         </>
 
     )

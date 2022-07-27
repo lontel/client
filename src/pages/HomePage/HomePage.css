@@ -1,7 +1,8 @@
 .home-page {
-    background-image: url('./../../../public/images/imagen-index.jpg');
+    background-image: url('./../../../public/images/imagen-index.jpg'), url('./../../../public/images/bike-park-krvavec.jpeg');
     background-size: cover;
     height: 688px;
+    
 }
 
 .home-page h1 {
@@ -12,8 +13,21 @@
 .home-page p {
     padding-left: 50px;
 }
-
-
+.home-page2{
+    background-image:  url('./../../../public/images/bike-park-krvavec.jpeg');
+    background-size: cover;
+    height: 688px;
+}
+.home-page3 {
+    background-image: url('./../../../public/images/bike-park-pohorje.jpeg');
+    background-size: cover;
+    height: 688px;
+}
+.home-page4 {
+    background-image: url('./../../../public/images/photo-1511994298241-608e28f14fde.avif');
+    background-size: cover;
+    height: 688px;
+}
 
 :root {
     --body-bg-color: #2c3439;
@@ -154,6 +168,9 @@ hr {
 
 footer {
     background-color: #000000;
-    height: 46px;
+    height: 50px;
 
+}
+.copy-right{
+    color: white;
 }
