@@ -45,9 +45,8 @@ const LoginForm = () => {
 
         <Form onSubmit={handleSubmit} id="container">
             <h2>Log In</h2>
-            <p>It´s time to change your life</p>
             <Form.Group className="mb-3" controlId="email">
-                <Form.Label>Email</Form.Label>
+                <Form.Label className='input-email-name'>Email</Form.Label>
                 <Form.Control className="input" type="email" value={email} onChange={handleInputChange} name="email" />
             </Form.Group>
 

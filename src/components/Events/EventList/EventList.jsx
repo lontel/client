@@ -69,7 +69,7 @@ const EventList = () => {
 
                     }
 
-                    <Modal show={showModal} onHide={closeModal}>
+                    <Modal className='modal-global' show={showModal} onHide={closeModal}>
                         <Modal.Header closeButton>
                             <Modal.Title>New Event</Modal.Title>
                         </Modal.Header>

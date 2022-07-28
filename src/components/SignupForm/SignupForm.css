@@ -8,8 +8,8 @@
     height: 300px;
     width: 480px;
     padding: 1em;
-    padding-bottom: 650px;
-    margin-top: 82px;
+    padding-bottom: 610px;
+    margin-top: 102px;
 
     position: fixed;
     bottom: 0;
@@ -21,7 +21,7 @@
 }
 
 #container-signup h2 {
-    background: url(https://static.pexels.com/photos/5782/nature-flowers-vintage-plant.jpg);
+    background: url('./../../../public/images/body.jpg');
 
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -53,8 +53,9 @@
 
 
 #container-signup button {
-    background-image: linear-gradient(to left, rgba(255, 146, 202, 0.75) 0%, rgba(145, 149, 251, 0.86) 100%);
-    box-shadow: 0 9px 25px -5px #df91fb;
+    background-image: linear-gradient(to left, rgba(248, 172, 117, 1) 0%,
+            rgba(253, 164, 91, 0.86) 100%);
+    box-shadow: 0 9px 25px -5px #fbd191;
     font-family: 'Abel', sans-serif;
     padding: 0.5em 1.9em;
     margin: 2.3em 0 0 0;

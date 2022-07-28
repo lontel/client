@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web');
 
 body {
-    	background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%);
+    background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%);
     background: url('./../../../public/images/body.jpg');
     background-attachment: fixed;
     background-size: cover;
@@ -34,11 +34,11 @@ body {
 }
 
 #container h2 {
-    background: url(https://static.pexels.com/photos/5782/nature-flowers-vintage-plant.jpg);
-    /*   الكود المسؤال عن اضافة شفافية للنص */
+    background: url('./../../../public/images/body.jpg');
+
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    /* 	background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%); */
+
     font-family: 'Playfair Display', serif;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -66,8 +66,8 @@ body {
 
 
 #container button {
-    background-image: linear-gradient(to left, rgba(255, 146, 202, 0.75) 0%, rgba(145, 149, 251, 0.86) 100%);
-    box-shadow: 0 9px 25px -5px #df91fb;
+    background-image: linear-gradient(to left, rgba(248, 172, 117, 1) 0%, rgba(253, 164, 91, 0.86) 100%);
+    box-shadow: 0 9px 25px -5px #fbd191;
     font-family: 'Abel', sans-serif;
     padding: 0.5em 1.9em;
     margin: 2.3em 0 0 0;
@@ -107,7 +107,7 @@ input:hover {
     outline: none;
     padding: .2rem 1rem;
     border-radius: 1rem;
-    border-color: #7a9cc6;
+    border-color: #f7b76a;
 }
 
 .input::placeholder {
@@ -117,4 +117,10 @@ input:hover {
 .input:focus::placeholder {
     opacity: 0;
     transition: opacity .3s;
+}
+
+/*  Input email name */
+
+.input-email-name {
+    margin-top: 30px;
 }
