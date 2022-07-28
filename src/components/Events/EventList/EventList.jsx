@@ -5,20 +5,23 @@ import { useState, useEffect } from 'react'
 import EventForm from '../EventForm/EventForm'
 import eventService from '../../../services/event.services'
 import SearchBar from '../../SearchBar/SearchBar'
+import { AuthContext } from '../../../contexts/auth.context'
+import { useContext } from 'react'
+
+
 
 const EventList = () => {
 
     const [events, setEvents] = useState([])
     const [showModal, setShowModal] = useState(false)
 
+    const { user } = useContext(AuthContext)
 
     const filteredEvents = e => {
 
         eventService
             .filterEvents(e.target.value)
-            .then(({ data }) => {
-                setEvents(data)
-            })
+            .then(({ data }) => setEvents(data))
             .catch(err => console.log(err))
 
     }
@@ -33,9 +36,7 @@ const EventList = () => {
     const loadEvents = () => {
         eventService
             .getEvents()
-            .then(({ data }) => {
-                setEvents(data)
-            })
+            .then(({ data }) => setEvents(data))
             .catch(err => console.log(err))
     }
 
@@ -46,8 +47,7 @@ const EventList = () => {
                 <Row>
                     <Col>
                         <h1 className='title-listEvents'>List of events</h1>
-
-                        <button className="cssbuttons-io-button"> <span onClick={openModal} className='addPlus' >+ Add</span></button>
+                        {user?.role === 'SPONSOR' && <button className="cssbuttons-io-button"> <span onClick={openModal} className='addPlus' >+ Add</span></button>}
                     </Col>
                     <hr></hr>
                     <SearchBar filterEvents={filteredEvents} />

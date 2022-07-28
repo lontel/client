@@ -2,13 +2,14 @@ import './EventsDetails.css'
 import eventService from "../../../services/event.services"
 import { useEffect, useState, useContext } from "react"
 import { Container, Row, Col, Button, Form } from "react-bootstrap"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import Loader from "../../../components/Loader/Loader"
 import Map from "../../../components/Maps/Maps"
 import Chat from '../../../components/Chat/Chat'
 import UsersJoined from '../../../components/Users/UsersJoined/UsersJoined'
 import { AuthContext } from '../../../contexts/auth.context'
 import moment from 'moment'
+
 
 const EventDetails = ({ loadEvents }) => {
 
@@ -35,11 +36,16 @@ const EventDetails = ({ loadEvents }) => {
             .catch(err => console.error(err))
     }
 
+    const navigate = useNavigate()
     const handleJoin = () => {
+
 
         eventService
             .joinEvent(event_id)
-            .then(() => loadEvents())
+            .then(() => {
+                navigate('/events')
+                loadEvents()
+            })
             .catch(err => console.error(err))
     }
 

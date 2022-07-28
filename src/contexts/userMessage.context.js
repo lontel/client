@@ -1,6 +1,5 @@
 import { createContext, useState } from 'react'
 
-
 const MessageContext = createContext()
 
 function MessageProviderWrapper(props) {
