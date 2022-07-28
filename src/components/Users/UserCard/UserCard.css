@@ -1,3 +1,11 @@
+/* .UserCard img {
+    height: 80%;
+    width: 15%;
+    border-radius: 350px;
+    object-fit: cover;
+
+} */
+
 /*  User photo */
 
 .user-photo {
@@ -129,67 +137,17 @@
 /* User button delete */
 
 .delete button {
-    width: 150px;
-    height: 35px;
-    cursor: pointer;
-    display: flex;
-    margin-left: 22px;
-    align-items: center;
-    background: red;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-    background: #e62222;
-}
-
-.delete button,
-.delete button span {
-    transition: 200ms;
-}
-
-.delete button .text {
-    transform: translateX(35px);
-    color: white;
-    font-weight: bold;
-}
-
-.delete button .icon {
-    position: absolute;
-    border-left: 1px solid #c41b1b;
-    transform: translateX(110px);
-    height: 40px;
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.delete button svg {
-    width: 15px;
-    fill: #eee;
-}
-
-.delete button:hover {
-    background: #ff3636;
-}
-
-.delete button:hover .text {
-    color: transparent;
-}
-
-.delete button:hover .icon {
-    width: 150px;
-    border-left: none;
-    transform: translateX(0);
-}
-
-.delete button:focus {
-    outline: none;
-}
-
-.delete button:active .icon svg {
-    transform: scale(0.8);
-}
+    color: #090909;
+        padding: 0.7em 1.7em;
+        font-size: 18px;
+        border-radius: 0.5em;
+        background: #ffffff;
+        border: 1px solid #e8e8e8;
+        transition: all .3s;
+        box-shadow: 6px 6px 12px #c5c5c5,
+            -6px -6px 12px #ffffff;
+            color: red;
+    }
 
 /* edit button */
 
@@ -200,7 +158,7 @@
     border-radius: 15px;
     color: #212121;
     z-index: 1;
-    background: #e8e8e8;
+    background: #ffffff;
     position: relative;
     font-weight: 1000;
     font-size: 17px;
@@ -234,3 +192,7 @@
 }
 
 /* Delete message */
+
+.trash{
+    width: 20px;
+}
