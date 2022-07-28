@@ -43,7 +43,7 @@ const UserEditForm = () => {
         userService
             .editUser(user_id, editData)
             .then((data) => {
-                navigate('/users')
+                navigate(`/account/myprofile/${user_id}`)
             })
             .catch(err => console.log(err))
     }

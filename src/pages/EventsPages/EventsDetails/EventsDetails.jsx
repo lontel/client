@@ -52,16 +52,20 @@ const EventDetails = ({ loadEvents }) => {
 
                     <h1 className='title-details-event' >Details of  {!event.origin ? <Loader /> : event.origin.address}  to {!event.destination ? <Loader /> : event.destination.address}  </h1>
                     <hr />
-
                     <Row>
+                     
                         <Col md={{ span: 5 }}>
+                            <div className='route-info2'>
                             <h3 className='details-route'>Description of the route:</h3>
                             <p className='details-route-description'>{event.description}</p>
+                            </div>
+                        
                             <ul>
                                 <li>Date: {newDate}</li>
                                 <li>Start time of the event: {event.startTime}</li>
                             </ul>
                         </Col>
+                      
                         <Col md={{ span: 2 }}>
 
                             <Map event={event} />
