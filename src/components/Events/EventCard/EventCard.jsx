@@ -20,7 +20,7 @@ const EventCard = ({ origin, destination, _id, eventPic }) => {
                         />
                         <Carousel.Caption>
                             <h3>The event is from {origin.address} to {destination.address}</h3>
-                            <p>Estamos de risa</p>
+
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>

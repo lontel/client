@@ -35,9 +35,9 @@
     border-radius: 16px;
     overflow: hidden;
     transition: all 0.2s;
-    margin-top: 1.8%;
+    margin-top: 2.1%;
     position: absolute;
-    height: 59px;
+    height: 48px;
 }
 
 .button-chat span {
@@ -86,7 +86,7 @@ button:active {
 
 /* date of message */
 
-#chat-user p {
+.hour-chat {
     margin-left: auto;
 }
 

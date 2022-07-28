@@ -8,8 +8,9 @@
 /*  Details  of Map (distance and duration) */
 
 .route-info {
-    background-color: rgb(255, 255, 255);
+    background-color: #ddd2d0;
     margin-right: 242px;
+
 }
 
 /* Details Route */
@@ -30,8 +31,8 @@
 }
 
 .route-info2 {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
