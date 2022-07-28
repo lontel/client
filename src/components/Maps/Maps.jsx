@@ -61,7 +61,7 @@ function Map({ event }) {
             h='100vh'
             w='100vw'
         >
-            <Box position='absolute' left={0} top={0} h='100%' w='80%'>
+            <Box position='absolute' left={0} top={0} h='60%' w='50%'>
                 {/* Google Map Box */}
                 <GoogleMap
                     center={center}
@@ -81,16 +81,16 @@ function Map({ event }) {
                     )}
                 </GoogleMap>
             </Box>
-            <Box
-                p={4}
+            <Box className='details-map'
+                p={1}
                 borderRadius='lg'
-                m={4}
-                bgColor='white'
+                m={1}
+
                 shadow='base'
                 minW='container.md'
                 zIndex='1'
             >
-                <HStack spacing={2} justifyContent='space-between'>
+                <HStack spacing={2} className='chat-user'>
                     <Box flexGrow={1}>
                         <Autocomplete>
                             <Link type='text' placeholder='Origin' ref={originRef} />

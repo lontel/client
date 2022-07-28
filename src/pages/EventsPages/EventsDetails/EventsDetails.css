@@ -1,4 +1,30 @@
-#myMap {
-    height: 400px;
-    background-color: red;
+/* Title Details Page Event */
+
+.title-details-event {
+    text-align: center;
+    padding: 20px;
+}
+
+/*  Details  of Map (distance and duration) */
+
+.route-info {
+    background-color: rgb(255, 255, 255);
+    margin-right: 242px;
+}
+
+/* Details Route */
+
+.details-route {
+    font-size: 35px;
+}
+
+.details-route-description {
+    font-size: 14px;
+}
+
+/* Title Details Page Users Joined */
+
+.details-route-joined {
+    text-align: center;
+    padding: 20px;
 }

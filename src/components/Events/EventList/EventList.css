@@ -4,5 +4,93 @@
 
 }
 
+/* Title list events */
+
+.title-listEvents {
+    text-align: center;
+    margin-top: 20px;
+}
+
 
 /* Modal New Event Style */
+
+.modal-global {
+    background-color: rgb(247, 133, 46);
+}
+
+.modal-body {
+    background-color: rgb(245, 160, 95);
+
+}
+
+/* Input Form Modal */
+
+/* input form */
+.input {
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: #777;
+    padding: .2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: #0d0c22;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.input:focus,
+input:hover {
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: #f7b76a;
+}
+
+.input::placeholder {
+    color: #777;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+/*  Input email name */
+
+.input-email-name {
+    margin-top: 30px;
+}
+
+
+/*  Button Add Event */
+
+.cssbuttons-io-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0.7em 1.4em 0.7em 1.1em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, rgb(241, 209, 79) 0%, rgb(247, 213, 102) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #a7871498;
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+
+}
+
+.cssbuttons-io-button svg {
+    margin-right: 6px;
+}
+
+.cssbuttons-io-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #a7961498;
+}
+
+.cssbuttons-io-button:active {
+    box-shadow: 0 0.3em 1em -0.5em #a78a1498;
+}

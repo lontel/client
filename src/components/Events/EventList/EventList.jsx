@@ -1,7 +1,7 @@
 import './EventList.css'
 import { Row, Col, Modal, Image } from 'react-bootstrap'
 import EventCard from '../EventCard/EventCard'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import EventForm from '../EventForm/EventForm'
 import eventService from '../../../services/event.services'
 import SearchBar from '../../SearchBar/SearchBar'
@@ -44,8 +44,10 @@ const EventList = () => {
         <>
             {
                 <Row>
-
-                    <h1>List of events <span onClick={openModal} className='addPlus' >+</span></h1>
+                    <Col>
+                        <h1 className='title-listEvents'>List of events</h1>
+                        <button className="cssbuttons-io-button"> <span onClick={openModal} className='addPlus' >+ Add</span></button>
+                    </Col>
                     <hr></hr>
                     <SearchBar filterEvents={filteredEvents} />
                     {events.length ?
@@ -69,11 +71,11 @@ const EventList = () => {
 
                     }
 
-                    <Modal className='modal-global' show={showModal} onHide={closeModal}>
-                        <Modal.Header closeButton>
+                    <Modal show={showModal} onHide={closeModal}>
+                        <Modal.Header className='modal-global' closeButton>
                             <Modal.Title>New Event</Modal.Title>
                         </Modal.Header>
-                        <Modal.Body>
+                        <Modal.Body className='modal-body'>
                             <EventForm closeModal={closeModal} loadEvents={loadEvents} />
                         </Modal.Body>
                     </Modal>
