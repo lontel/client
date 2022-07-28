@@ -33,7 +33,6 @@ const Chat = () => {
             .then(({ data }) => {
                 setChatMessage('')
                 loadMessages()
-
             })
             .catch(err => console.log(err))
         e.target.reset()
@@ -44,14 +43,9 @@ const Chat = () => {
 
         commentService
             .getComments(event)
-            .then(({ data }) => {
-                console.log('-------este-------', data)
-                setAllMessages(data.reverse())
-            })
+            .then(({ data }) => setAllMessages(data.reverse()))
             .catch(err => console.log(err))
     }
-
-
 
     const { message } = chatMessage
 
@@ -72,7 +66,6 @@ const Chat = () => {
                         </Col>
                         <Col >
                             <Form.Group className='input-wrapper' controlId="bio">
-                                {/* <Button type="submit" > Submit </Button> */}
                                 <button className='button-chat' type="submit">
                                     <div class="svg-wrapper-1">
                                         <div class="svg-wrapper">

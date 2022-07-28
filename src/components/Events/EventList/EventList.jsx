@@ -74,7 +74,7 @@ const EventList = () => {
 
                     <Modal show={showModal} onHide={closeModal}>
                         <Modal.Header className='modal-global' closeButton>
-                            <Modal.Title>New Event</Modal.Title>
+                            <Modal.Title>Create New Event</Modal.Title>
                         </Modal.Header>
                         <Modal.Body className='modal-body'>
                             <EventForm closeModal={closeModal} loadEvents={loadEvents} />
