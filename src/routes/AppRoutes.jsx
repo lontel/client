@@ -28,7 +28,7 @@ const AppRoutes = () => {
             <Route path='/events' element={<EventListPage />} />
             <Route path='/about-us' element={<AboutUs />} />
 
-   // Private Routes
+        // Private Routes
 
             <Route path="/users" element={<PrivateRoute />}>
                 <Route path="" element={<UserListPage />} />
