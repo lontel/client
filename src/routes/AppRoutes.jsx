@@ -11,6 +11,7 @@ import EventEditForm from '../components/Events/EventEditForm/EventEditForm'
 import NewEventPage from '../pages/EventsPages/NewEventPage/NewEventPage'
 import AboutUs from '../pages/AboutUs/AboutUs'
 import PrivateRoute from './PrivateRoute'
+import AdminRoute from './AdminRoute'
 import MyProfilePage from './../pages/MyProfilePage/MyProfilePage'
 import ChatPage from '../pages/EventsPages/ChatPage/ChatPage'
 
@@ -28,11 +29,14 @@ const AppRoutes = () => {
             <Route path='/events' element={<EventListPage />} />
             <Route path='/about-us' element={<AboutUs />} />
 
-        // Private Routes
+        // ADMIN ROUTE
 
-            <Route path="/users" element={<PrivateRoute />}>
+            <Route path="/users" element={<AdminRoute />}>
                 <Route path="" element={<UserListPage />} />
             </Route>
+
+        // Private Routes
+
             <Route path="/account/details/:account_id" element={<PrivateRoute />}>
                 <Route path="" element={<UserDetails />} />
             </Route>
