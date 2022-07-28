@@ -8,9 +8,9 @@
 
 /* Card */
 
-#users-card {
+/* #users-card {
     margin-left: 15px;
-}
+} */
 
 /*  User photo */
 
@@ -27,8 +27,7 @@
 /* User Card */
 .card-client {
     background: linear-gradient(rgba(215, 213, 213, 0.75), rgba(228, 229, 231, 0.75));
-    ;
-    width: 17rem;
+    width: 280px;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 20px;

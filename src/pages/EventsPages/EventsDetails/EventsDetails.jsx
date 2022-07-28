@@ -52,89 +52,96 @@ const EventDetails = ({ loadEvents }) => {
     const newDate = moment(event.date).utc().format('MM/DD/YYYY')
 
     return (
-        <Container>
+        <>
             {
                 <>
 
                     <h1 className='title-details-event' >Details of  {!event.origin ? <Loader /> : event.origin.address}  to {!event.destination ? <Loader /> : event.destination.address}  </h1>
                     <hr />
-                    <Row>
+                    <Container className='containerBlock'>
+                        <Row >
 
-                        <Col md={{ span: 5 }}>
-                            <div className='route-info2'>
-                                <h3 className='details-route'>Description of the route:</h3>
-                                <p className='details-route-description'>{event.description}</p>
-                            </div>
-
-                            <ul>
-                                <li>Date: {newDate}</li>
-                                <li>Start time of the event: {event.startTime}</li>
-                            </ul>
-
-                            <Link to={`/events/edit/${event_id}`}>
-                                <div className="d-grid">
-                                    {user?.role === 'ADMIN' && <Button variant="warning" size="sm" as="div">Edit</Button>}
+                            <Col md={{ span: 5 }}>
+                                <div className='route-info2'>
+                                    <h3 className='details-route'>Description of the route:</h3>
+                                    <p className='details-route-description'>{event.description}</p>
                                 </div>
-                            </Link>
 
-                            <Link to={`/events`}>
-                                <div className="d-grid">
-                                    {user?.role === 'ADMIN' && <Button onClick={handleDelete} variant="danger" size="sm" as="div"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash" viewBox="0 0 16 16">
-                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                        <path fillRule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                    </svg> Delete</Button>}
-                                </div>
-                            </Link>
-                        </Col>
+                                <ul>
+                                    <li>Date: {newDate}</li>
+                                    <li>Start time of the event: {event.startTime}</li>
+                                </ul>
+                                <Link to={`/event/${event_id}/join`}>
+                                    <div className="d-grid">
+                                        <Button onClick={handleJoin} variant="success" size="sm" as="div">Join Event</Button>
+                                    </div>
+                                </Link>
 
-                        <Col md={{ span: 2 }}>
+                                <Link to={`/events/edit/${event_id}`}>
+                                    <div className="d-grid">
+                                        {user?.role === 'ADMIN' && <Button variant="warning" size="sm" as="div">Edit</Button>}
+                                    </div>
+                                </Link>
 
-                            <Map event={event} />
+                                <Link to={`/events`}>
+                                    <div className="d-grid">
+                                        {user?.role === 'ADMIN' && <Button onClick={handleDelete} variant="danger" size="sm" as="div"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                            <path fillRule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                        </svg> Delete</Button>}
+                                    </div>
+                                </Link>
+                            </Col>
 
-                        </Col>
 
-                        <Link to={`/event/${event_id}/join`}>
-                            <div className="d-grid">
-                                <Button onClick={handleJoin} variant="success" size="sm" as="div">Join Event</Button>
-                            </div>
-                        </Link>
-                        <hr />
+                            <Col md={{ span: 2 }}>
 
-                        <h4 className='details-route-joined'>Cyclists who has joined in the event!</h4>
-                        {event.cyclists
+                                <Map event={event} />
+
+                            </Col>
+                        </Row>
+                    </Container>
+
+
+                    <hr />
+
+                    <h4 className='details-route-joined'>Cyclists who has joined in the event!</h4>
+
+
+                    {
+                        event.cyclists
                             ?
                             event.cyclists.map(e => {
                                 return (
-                                    <Col md={3} key={e}>
-                                        <Col  >
-                                            <UsersJoined {...e} />
-                                        </Col>
-                                    </Col>
+                                    <UsersJoined {...e} />
                                 )
+
                             })
                             :
                             <Loader />
-                        }
+                    }
 
 
+                    <div className='button-join-andBack'>
                         <Link to="/events">
-                            <Button as="div" variant="dark">Back to event list</Button>
+                            <Button className='button' as="div" variant="dark">Back to event list</Button>
                         </Link>
 
                         <Link to={`/events/chat/${event_id}`}>
-                            <Button as="div" variant="dark">Chat Event</Button>
+                            <Button className='button' as="div" variant="dark">Chat Event</Button>
                         </Link>
+                    </div>
 
 
 
-                    </Row>
 
-                    <Chat />
+
+                    {/* <Chat /> */}
 
                 </>
             }
 
-        </Container >
+        </>
 
     )
 }

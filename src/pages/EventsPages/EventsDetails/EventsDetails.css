@@ -36,3 +36,24 @@
     justify-content: center;
     align-items: center;
 }
+
+.containerBlock {
+    height: 450px;
+}
+
+.display-container {
+    flex-wrap: wrap;
+}
+
+/* Join Button*/
+
+.join-button {
+    margin-top: 40px;
+}
+
+.button-join-andBack {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
