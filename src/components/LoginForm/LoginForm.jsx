@@ -35,7 +35,10 @@ const LoginForm = () => {
                 setShowMessage({ show: true, title: `Welcome! ${loginData.email}`, text: 'You have succesfully login!' })
                 navigate('/')
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                setShowMessage({ show: true, title: `Error`, text: 'Please check your email and password and try again!' })
+                console.log(err)
+            })
     }
 
 

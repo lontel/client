@@ -2,13 +2,14 @@ import './EventsDetails.css'
 import eventService from "../../../services/event.services"
 import { useEffect, useState, useContext } from "react"
 import { Container, Row, Col, Button, Form } from "react-bootstrap"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import Loader from "../../../components/Loader/Loader"
 import Map from "../../../components/Maps/Maps"
 import Chat from '../../../components/Chat/Chat'
 import UsersJoined from '../../../components/Users/UsersJoined/UsersJoined'
 import { AuthContext } from '../../../contexts/auth.context'
 import moment from 'moment'
+
 
 const EventDetails = ({ loadEvents }) => {
 
@@ -35,11 +36,16 @@ const EventDetails = ({ loadEvents }) => {
             .catch(err => console.error(err))
     }
 
+    const navigate = useNavigate()
     const handleJoin = () => {
+
 
         eventService
             .joinEvent(event_id)
-            .then(() => loadEvents())
+            .then(() => {
+                navigate('/events')
+                loadEvents()
+            })
             .catch(err => console.error(err))
     }
 
@@ -53,19 +59,19 @@ const EventDetails = ({ loadEvents }) => {
                     <h1 className='title-details-event' >Details of  {!event.origin ? <Loader /> : event.origin.address}  to {!event.destination ? <Loader /> : event.destination.address}  </h1>
                     <hr />
                     <Row>
-                     
+
                         <Col md={{ span: 5 }}>
                             <div className='route-info2'>
-                            <h3 className='details-route'>Description of the route:</h3>
-                            <p className='details-route-description'>{event.description}</p>
+                                <h3 className='details-route'>Description of the route:</h3>
+                                <p className='details-route-description'>{event.description}</p>
                             </div>
-                        
+
                             <ul>
                                 <li>Date: {newDate}</li>
                                 <li>Start time of the event: {event.startTime}</li>
                             </ul>
                         </Col>
-                      
+
                         <Col md={{ span: 2 }}>
 
                             <Map event={event} />
