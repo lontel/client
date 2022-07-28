@@ -36,8 +36,8 @@ const HomePage = () => {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h3>Social network of cyclists</h3>
+                            <p>Join hundreds of routes and share special moments.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -47,8 +47,8 @@ const HomePage = () => {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h3>Routes throughout the country</h3>
+                            <p>Thousands of kilometers to travel and discover new landscapes.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -59,8 +59,8 @@ const HomePage = () => {
                         />
 
                         <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h3>The best community in the world</h3>
+                            <p>Join and enjoy the experience</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -71,9 +71,9 @@ const HomePage = () => {
                         />
 
                         <Carousel.Caption>
-                            <h3>Third slide label</h3>
+                            <h3>Life is life</h3>
                             <p>
-                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                                Only for adventurers.
                             </p>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -91,7 +91,7 @@ const HomePage = () => {
             <div className='home-page3'>
 
             </div>
-           
+
             <footer>
 
                 <ul className="menu">

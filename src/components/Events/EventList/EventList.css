@@ -80,9 +80,9 @@ input:hover {
     padding: 0.7em 1.4em 0.7em 1.1em;
     color: white;
     background: #ad5389;
-    background: linear-gradient(0deg, rgb(241, 209, 79) 0%, rgb(247, 213, 102) 100%);
+    background: linear-gradient(0deg, #df8661 0%, #dc825e 100%);
     border: none;
-    box-shadow: 0 0.7em 1.5em -0.5em #a7871498;
+    box-shadow: 0 0.7em 1.5em -0.5em #f1712b;
     letter-spacing: 0.05em;
     border-radius: 20em;
 
@@ -97,5 +97,5 @@ input:hover {
 }
 
 .cssbuttons-io-button:active {
-    box-shadow: 0 0.3em 1em -0.5em #a78a1498;
+    box-shadow: 0 0.3em 1em -0.5em #f1712b;
 }

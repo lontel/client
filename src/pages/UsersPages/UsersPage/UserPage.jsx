@@ -1,3 +1,4 @@
+import './UserPage.css'
 import UserList from "../../../components/Users/UserList/UserList";
 
 
@@ -7,7 +8,9 @@ const UserListPage = () => {
 
         <>
 
-            <h1>Listado de usuarios</h1>
+            <h1 id='users-title' >List of users</h1>
+            <hr></hr>
+            <br></br>
             <UserList />
         </>
 

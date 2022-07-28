@@ -81,13 +81,13 @@ button:active {
 /*  Chat Messages */
 
 .chat-message {
-    display: flex;
+    /* display: flex; */
 }
 
 /* date of message */
 
 #chat-user p {
-    text-align: end;
+    margin-left: auto;
 }
 
 /* Chat Profile Pic */

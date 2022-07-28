@@ -18,7 +18,7 @@ const UserCard = ({ username, role, profilePic, _id }) => {
 
     return (
         <>
-            <Card className="card-client mb-4">
+            <Card className="card-client mb-4" id='users-card'>
                 <Card.Img className='user-photo' variant="top" src={profilePic} />
                 <Card.Body>
                     <Card.Title>{username}</Card.Title>

@@ -6,6 +6,12 @@
 
 } */
 
+/* Card */
+
+#users-card {
+    margin-left: 15px;
+}
+
 /*  User photo */
 
 .user-photo {
@@ -20,14 +26,15 @@
 
 /* User Card */
 .card-client {
-    background: linear-gradient(rgba(215, 213, 213, 0.75), rgba(228, 229, 231, 0.75));;
+    background: linear-gradient(rgba(215, 213, 213, 0.75), rgba(228, 229, 231, 0.75));
+    ;
     width: 17rem;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 20px;
     padding-right: 20px;
-    border: 4px solid #7cdacc;
-    box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+    border: 4px solid #e1c876;
+    box-shadow: 0 6px 10px #2f3323;
     border-radius: 10px;
     text-align: center;
     color: #fff;
@@ -44,7 +51,7 @@
     object-fit: cover;
     width: 5rem;
     height: 5rem;
-    border: 4px solid #7cdacc;
+    border: 4px solid #e1c876;
     border-radius: 999px;
     display: flex;
     justify-content: center;
@@ -76,7 +83,7 @@
     width: 100%;
     height: 2px;
     margin: 20px 0;
-    background: #7cdacc;
+    background: #e1c876;
 }
 
 .social-media a {
@@ -97,7 +104,7 @@
 
 /*-- Tooltip Social Media --*/
 .tooltip-social {
-    background: #262626;
+    background: #e1c876;
     display: block;
     position: absolute;
     bottom: 0;
@@ -125,7 +132,7 @@
 }
 
 .social-media a .tooltip-social:after {
-    border-top-color: #262626;
+    border-top-color: #e1c876;
 }
 
 .social-media a:hover .tooltip-social {
@@ -138,16 +145,16 @@
 
 .delete button {
     color: #090909;
-        padding: 0.7em 1.7em;
-        font-size: 18px;
-        border-radius: 0.5em;
-        background: #ffffff;
-        border: 1px solid #e8e8e8;
-        transition: all .3s;
-        box-shadow: 6px 6px 12px #c5c5c5,
-            -6px -6px 12px #ffffff;
-            color: red;
-    }
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
+    color: red;
+}
 
 /* edit button */
 
@@ -193,6 +200,6 @@
 
 /* Delete message */
 
-.trash{
+.trash {
     width: 20px;
 }
