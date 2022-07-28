@@ -1,9 +1,10 @@
+import './MyProfilePage.css'
+
 import { useEffect } from "react"
 import { useState } from "react"
-import { Button } from "react-bootstrap"
+import { Button, Card, Col, Row, Container } from "react-bootstrap"
 import { useParams, Link } from "react-router-dom"
 import userService from "../../services/user.services"
-
 
 const MyProfilePage = () => {
 
@@ -30,23 +31,59 @@ const MyProfilePage = () => {
     }
     return (role === 'ADMIN' ?
         <>
-             <h1>Welcome {username}</h1>
-            <h2>{bio}</h2>
-            <h3>{email}</h3>
-            <img src={profilePic} alt="" />
-            <h4>{role}</h4>
-            <Link to="/users">
-                <Button as="span" >Users</Button>
-            </Link> 
+            <Container>
+                <Row>
+                
 
+                    <Col md={{  offset: 3 }}>
+
+                        <Card className='user-card' style={{ width: '38rem' }}>
+                            <Card.Body>
+                                <Card.Title>Welcome to your profile, {username}</Card.Title>
+                                <Card.Text>Email address: {email}</Card.Text>
+                                <Card.Img className='img' src={profilePic} />
+                                <Link to={`/account/edit/${account_id}`}>
+                                    <Button className='button' >Edit profile</Button>
+                                </Link>
+                                <Link to={`/users`}>
+                                    <Button className='button'>All users</Button>
+                                </Link>
+                                <Link to='/'>
+                                    <Button className='button'>Back</Button>
+                                </Link>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
+           
         </>
         :
         <>
-            <h1>Welcome {username}</h1>
-            <h2>{bio}</h2>
-            <h3>{email}</h3>
-            <img src={profilePic} alt="" />
-            <h4>{role}</h4>
+            <Container>
+                <Row>
+
+
+                    <Col md={{ offset: 3 }}>
+
+                        <Card className='user-card' style={{ width: '38rem' }}>
+                            <Card.Body>
+                                <Card.Title>Welcome to your profile, {username}</Card.Title>
+                                <Card.Text>Email address: {email}</Card.Text>
+                            <Card.Img className='img' src={profilePic} />
+                                <Link to={`/account/edit/${account_id}`}>
+                                    <Button className='button' >Edit profile</Button>
+                                </Link>
+                                
+                                <Link to='/'>
+                                    <Button className='button'>Back</Button>
+                                </Link>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
+    
         </>
     )
 
