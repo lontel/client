@@ -11,6 +11,11 @@
     margin-top: 20px;
 }
 
+/* Text event not found */
+
+.event-notFound {
+    text-align: center;
+}
 
 /* Modal New Event Style */
 

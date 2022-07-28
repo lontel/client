@@ -46,6 +46,7 @@ const EventList = () => {
                 <Row>
                     <Col>
                         <h1 className='title-listEvents'>List of events</h1>
+
                         <button className="cssbuttons-io-button"> <span onClick={openModal} className='addPlus' >+ Add</span></button>
                     </Col>
                     <hr></hr>
@@ -65,7 +66,7 @@ const EventList = () => {
 
                         :
                         <>
-                            <h1>Ohhhh no... no event was found</h1>
+                            <h1 className='event-notFound' >Ohhhh no... no event was found</h1>
                             <Image src='./../../images/search.gif' className='searchImg' />
                         </>
 
