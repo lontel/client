@@ -1,5 +1,5 @@
 import './UserCard.css'
-import { Card, Button, Container, Row, Col } from 'react-bootstrap'
+import { Card, Button, Container } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import userService from '../../../services/user.services'
 

@@ -1,6 +1,6 @@
 import './LoginForm.css'
 import { useContext, useState } from "react"
-import { Form, Button } from "react-bootstrap"
+import { Form, Button, Container } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom'
 import authService from './../../services/auth.services'
 import { MessageContext } from './../../contexts/userMessage.context'
@@ -45,26 +45,26 @@ const LoginForm = () => {
     const { password, email } = loginData
 
     return (
+        <Container>
+            <Form onSubmit={handleSubmit} id="container">
+                <h2>Log In</h2>
+                <Form.Group className="mb-3" controlId="email">
+                    <Form.Label className='input-email-name'>Email</Form.Label>
+                    <Form.Control className="input" type="email" value={email} onChange={handleInputChange} name="email" />
+                </Form.Group>
 
-        <Form onSubmit={handleSubmit} id="container">
-            <h2>Log In</h2>
-            <Form.Group className="mb-3" controlId="email">
-                <Form.Label className='input-email-name'>Email</Form.Label>
-                <Form.Control className="input" type="email" value={email} onChange={handleInputChange} name="email" />
-            </Form.Group>
+                <Form.Group className="mb-3" controlId="password">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control className="input" type="password" value={password} onChange={handleInputChange} name="password" />
+                </Form.Group>
 
-            <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control className="input" type="password" value={password} onChange={handleInputChange} name="password" />
-            </Form.Group>
+                <Form.Group className="d-grid">
+                    <Button variant="dark" type="submit">Login</Button>
+                </Form.Group>
 
-            <Form.Group className="d-grid">
-                <Button variant="dark" type="submit">Login</Button>
-            </Form.Group>
+            </Form>
 
-        </Form>
-
-
+        </Container>
 
 
     )

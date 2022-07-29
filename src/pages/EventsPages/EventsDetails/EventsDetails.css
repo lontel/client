@@ -45,7 +45,7 @@
     flex-wrap: wrap;
 }
 
-/* Join Button*/
+/* Go back and chat event*/
 
 .join-button {
     margin-top: 40px;
@@ -56,4 +56,33 @@
     align-items: center;
     justify-content: center;
     margin: auto;
+}
+
+/* Join BUtton */
+
+.joinedd {
+    position: relative;
+    padding: 10px 40px;
+    margin: 0px 10px 10px 0px;
+    float: left;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #FFF;
+    text-decoration: none;
+    background-color: #2ecc71;
+    border: none;
+    border-bottom: 5px solid #27ae60;
+    text-shadow: 0px -2px #27ae60;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.joinedd :hover,
+.joinedd :active {
+    -webkit-transform: translate(0px, 5px);
+    -ms-transform: translate(0px, 5px);
+    transform: translate(0px, 5px);
+    border-bottom: 1px solid #2ecc71;
 }

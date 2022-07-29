@@ -1,6 +1,8 @@
 import './HomePage.css'
 import { useNavigate } from 'react-router-dom'
 import Carousel from 'react-bootstrap/Carousel'
+import { Card, Button, Container, Row, Col } from 'react-bootstrap'
+
 
 const HomePage = () => {
 
@@ -12,10 +14,19 @@ const HomePage = () => {
     return (
 
         <>
+
             <section>
                 <div className='home-page4'>
-                    <button onClick={eventList} class="btn draw-border">Looking for adventure?</button>
+
+                    <Container>
+                        <Row className='align-items-center' style={{ height: '80vh' }}>
+                            <Col md={{ span: 4, offset: 5 }}>
+                                <button onClick={eventList} class="btn draw-border">Looking for adventure?</button>
+                            </Col>
+                        </Row>s
+                    </Container>
                 </div>
+
                 <div className='first-text'>
                     <h4 >We are waiting for you to join our routes and start enjoying.</h4>
                     <p>Mountain bikingin is one of the best ways to explore more of this area of Spain. To help you experience the best the region has to offer, we’ve reviewed our full collection of mountain bike routes to bring you the top 20. Just click on any of the routes below to browse real tips and photos shared by other members of Komoot’s mountain biking community, to see what they liked most about these Tours—and to find the perfect mountain bike route for your next ride.</p>
@@ -88,12 +99,14 @@ const HomePage = () => {
             <div className='home-page2'>
 
             </div>
+
+
             <div className='second-text'>
                 <p>We are ready to offer you the best we have. With a great deal of responsibility,
                     your routes will be enjoyable and unforgettable.</p>
             </div>
-            <div className='home-page3'>
 
+            <div className='home-page3'>
             </div>
 
             <footer>

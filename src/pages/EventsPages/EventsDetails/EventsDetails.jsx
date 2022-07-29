@@ -72,9 +72,9 @@ const EventDetails = ({ loadEvents }) => {
                                     <li>Start time of the event: {event.startTime}</li>
                                 </ul>
                                 <Link to={`/event/${event_id}/join`}>
-                                    <div className="d-grid">
-                                        <Button onClick={handleJoin} variant="success" size="sm" as="div">Join Event</Button>
-                                    </div>
+
+                                    <Button onClick={handleJoin} className="joinedd" size="sm">Join Event</Button>
+
                                 </Link>
 
                                 <Link to={`/events/edit/${event_id}`}>
@@ -107,20 +107,24 @@ const EventDetails = ({ loadEvents }) => {
 
                     <h4 className='details-route-joined'>Cyclists who has joined in the event!</h4>
 
+                    <Container>
+                        <Row >
 
-                    {
-                        event.cyclists
-                            ?
-                            event.cyclists.map(e => {
-                                return (
-                                    <UsersJoined {...e} />
-                                )
+                            {
+                                event.cyclists
+                                    ?
+                                    event.cyclists.map(e => {
+                                        return (
+                                            <UsersJoined {...e} />
+                                        )
 
-                            })
-                            :
-                            <Loader />
-                    }
+                                    })
+                                    :
+                                    <Loader />
+                            }
 
+                        </Row>
+                    </Container>
 
                     <div className='button-join-andBack'>
                         <Link to="/events">
