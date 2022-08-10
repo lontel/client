@@ -33,11 +33,11 @@ const MyProfilePage = () => {
         <>
             <Container>
                 <Row>
-                
 
-                    <Col md={{  offset: 3 }}>
 
-                        <Card className='user-card' style={{ width: '38rem' }}>
+                    <Col className='profile-pic' md={{ offset: 3 }}>
+
+                        <Card className='user-card' >
                             <Card.Body>
                                 <Card.Title>Welcome to your profile, {username}</Card.Title>
                                 <Card.Text>Email address: {email}</Card.Text>
@@ -56,34 +56,34 @@ const MyProfilePage = () => {
                     </Col>
                 </Row>
             </Container>
-           
+
         </>
         :
         <>
             <Container>
                 <Row>
+                    <Col className='profile-pic' md={{ offset: 3 }}>
 
-
-                    <Col md={{ offset: 3 }}>
-
-                        <Card className='user-card' style={{ width: '38rem' }}>
+                        <Card className='user-card' >
                             <Card.Body>
                                 <Card.Title>Welcome to your profile, {username}</Card.Title>
                                 <Card.Text>Email address: {email}</Card.Text>
-                            <Card.Img className='img' src={profilePic} />
+                                <Card.Img className='img' src={profilePic} />
+
                                 <Link to={`/account/edit/${account_id}`}>
                                     <Button className='button' >Edit profile</Button>
                                 </Link>
-                                
+
                                 <Link to='/'>
                                     <Button className='button'>Back</Button>
                                 </Link>
+
                             </Card.Body>
                         </Card>
                     </Col>
                 </Row>
             </Container>
-    
+
         </>
     )
 

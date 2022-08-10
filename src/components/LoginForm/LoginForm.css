@@ -23,13 +23,21 @@ body {
     padding: 1em;
     margin-top: 10%;
     padding-bottom: 500px;
-
     position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
     top: 0;
 
+
+}
+
+@media screen and (max-width: 800px) {
+    #container {
+        width: 80%;
+        margin-right: 10%;
+        margin-top: 225px;
+    }
 
 }
 

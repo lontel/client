@@ -20,6 +20,15 @@
 
 }
 
+@media screen and (max-width: 800px) {
+    #container-signup {
+        width: 90%;
+        margin-right: 5%;
+        margin-top: 225px;
+    }
+
+}
+
 #container-signup h2 {
     background: url('./../../../public/images/body.jpg');
 

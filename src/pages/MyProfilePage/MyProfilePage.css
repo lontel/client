@@ -4,7 +4,20 @@
     color: #df8761;
     margin-top: 5%;
     height: 50%;
+    width: 38rem;
 }
+
+@media screen and (max-width: 768px) {
+    .user-card {
+        width: 18rem;
+    }
+
+    .profile-pic {
+        padding-left: 45px;
+    }
+}
+
+
 
 .button {
     color: #090909;

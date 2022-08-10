@@ -13,14 +13,38 @@
     margin-top: 2%;
     position: absolute;
     margin-left: 45px;
-    position: fixed;
+    /* position: fixed; */
 }
 
 .input-wrapper input:focus {
     outline-color: lightcoral;
 }
 
+@media screen and (max-width: 576px) {
+    .input-wrapper input {
+        background-color: #eee;
+        border: none;
+        padding: 0.9rem;
+        font-size: 1rem;
+        width: 20em;
+        border-radius: 1rem;
+        color: lightcoral;
+        box-shadow: 0 0.4rem #dfd9d9;
+        cursor: pointer;
+        margin-top: 2%;
+        position: absolute;
+        margin-left: 45px;
+
+    }
+}
+
 /* Button chat */
+
+@media screen and (max-width: 576px) {
+    .button-chat {
+        margin-left: 50px;
+    }
+}
 
 .button-chat {
     font-family: inherit;

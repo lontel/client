@@ -86,3 +86,20 @@
     transform: translate(0px, 5px);
     border-bottom: 1px solid #2ecc71;
 }
+
+/*  Mobile responsive */
+
+@media screen and (max-width: 768px) {
+    .details-route-joined {
+        margin-top: 400px;
+    }
+
+    .details-route-joined {
+        color: #ffffff;
+    }
+
+    #joined-cyclists {
+        margin-left: 45px;
+    }
+
+}

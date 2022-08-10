@@ -1,6 +1,6 @@
 import './UsersJoined.css'
 import { useState, useEffect } from "react"
-import { Card, Col, Row, Container } from "react-bootstrap"
+import { Card } from "react-bootstrap"
 import userService from "../../../services/user.services"
 
 
@@ -20,16 +20,6 @@ const UsersJoined = ({ _id }) => {
 
     return (
 
-        // <Card id='users-card'>
-        //     <Card.Body>
-        //         <>
-        //             <img src={currentUser?.profilePic} />
-        //             <p>{currentUser?.username}</p>
-        //         </>
-        //     </Card.Body>
-        // </Card >
-
-
         <Card className="card-client mb-4" id='users-card'>
             <Card.Img src={currentUser?.profilePic} />
             <Card.Body>
@@ -37,7 +27,6 @@ const UsersJoined = ({ _id }) => {
                 <p>{currentUser?.bio} </p>
             </Card.Body>
         </Card >
-
 
     )
 }

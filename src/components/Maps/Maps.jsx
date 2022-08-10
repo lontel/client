@@ -54,13 +54,7 @@ function Map({ event }) {
     // }
 
     return (
-        <Flex
-            position='relative'
-            flexDirection='column'
-            alignItems='center'
-            h='100vh'
-            w='100vw'
-        >
+        <Flex className='map-route' >
             <Box position='absolute' left={0} top={0} h='60%' w='50%'>
                 {/* Google Map Box */}
                 <GoogleMap

@@ -108,7 +108,7 @@ const EventDetails = ({ loadEvents }) => {
                     <h4 className='details-route-joined'>Cyclists who has joined in the event!</h4>
 
                     <Container>
-                        <Row >
+                        <Row id='joined-cyclists'>
 
                             {
                                 event.cyclists
@@ -135,12 +135,6 @@ const EventDetails = ({ loadEvents }) => {
                             <Button className='button' as="div" variant="dark">Chat Event</Button>
                         </Link>
                     </div>
-
-
-
-
-
-                    {/* <Chat /> */}
 
                 </>
             }
